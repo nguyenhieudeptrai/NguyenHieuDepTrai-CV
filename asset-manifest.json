@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/nguyenhieudeptrai-cv/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/nguyenhieudeptrai-cv/static/js/main.ab787ad0.chunk.js",
-    "main.js.map": "/nguyenhieudeptrai-cv/static/js/main.ab787ad0.chunk.js.map",
-    "runtime-main.js": "/nguyenhieudeptrai-cv/static/js/runtime-main.e0a020b5.js",
-    "runtime-main.js.map": "/nguyenhieudeptrai-cv/static/js/runtime-main.e0a020b5.js.map",
-    "static/js/2.1625233c.chunk.js": "/nguyenhieudeptrai-cv/static/js/2.1625233c.chunk.js",
-    "static/js/2.1625233c.chunk.js.map": "/nguyenhieudeptrai-cv/static/js/2.1625233c.chunk.js.map",
-    "static/js/3.20a4caf6.chunk.js": "/nguyenhieudeptrai-cv/static/js/3.20a4caf6.chunk.js",
-    "static/js/3.20a4caf6.chunk.js.map": "/nguyenhieudeptrai-cv/static/js/3.20a4caf6.chunk.js.map",
-    "index.html": "/nguyenhieudeptrai-cv/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/nguyenhieudeptrai-cv/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.1625233c.chunk.js.LICENSE.txt": "/nguyenhieudeptrai-cv/static/js/2.1625233c.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/nguyenhieudeptrai-cv/static/media/logo.6ce24c58.svg"
+    "main.css": "/NguyenHieuDepTrai-CV/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/NguyenHieuDepTrai-CV/static/js/main.ab787ad0.chunk.js",
+    "main.js.map": "/NguyenHieuDepTrai-CV/static/js/main.ab787ad0.chunk.js.map",
+    "runtime-main.js": "/NguyenHieuDepTrai-CV/static/js/runtime-main.d7d4444b.js",
+    "runtime-main.js.map": "/NguyenHieuDepTrai-CV/static/js/runtime-main.d7d4444b.js.map",
+    "static/js/2.1625233c.chunk.js": "/NguyenHieuDepTrai-CV/static/js/2.1625233c.chunk.js",
+    "static/js/2.1625233c.chunk.js.map": "/NguyenHieuDepTrai-CV/static/js/2.1625233c.chunk.js.map",
+    "static/js/3.20a4caf6.chunk.js": "/NguyenHieuDepTrai-CV/static/js/3.20a4caf6.chunk.js",
+    "static/js/3.20a4caf6.chunk.js.map": "/NguyenHieuDepTrai-CV/static/js/3.20a4caf6.chunk.js.map",
+    "index.html": "/NguyenHieuDepTrai-CV/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/NguyenHieuDepTrai-CV/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.1625233c.chunk.js.LICENSE.txt": "/NguyenHieuDepTrai-CV/static/js/2.1625233c.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/NguyenHieuDepTrai-CV/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e0a020b5.js",
+    "static/js/runtime-main.d7d4444b.js",
     "static/js/2.1625233c.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
     "static/js/main.ab787ad0.chunk.js"
