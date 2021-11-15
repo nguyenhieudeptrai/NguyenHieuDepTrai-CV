@@ -112,7 +112,7 @@ function App() {
           lang: "C lang",
         }
       ],
-      description: '"Smart Cabinet system" - Used for temporary storage of goods'
+      description: '"Smart Cabinet" system - Used for temporary storage of goods'
     },
     {
       companyName: "Freelance job",
@@ -124,6 +124,17 @@ function App() {
         lang: "ReactJs",
       }],
       description: "Build an app for real estate search, analysis and transactions, use Google Map"
+    },
+    {
+      companyName: "Freelance job",
+      companyType: "F",// F or C or G
+      from: "10/2021",
+      to: "working",
+      jobs: [{
+        name: "Front-End",
+        lang: "React Native",
+      }],
+      description: '"Traverlog" mobile aplication - Build a social app to search camping or traveling when you have free time and want to be go out, using Google Map.'
     },
   ];
   const skill = {

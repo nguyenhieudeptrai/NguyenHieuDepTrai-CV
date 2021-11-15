@@ -41,7 +41,7 @@ export const Experience = ({ experience }) => {
                                     </div>
 
                                 </div>
-                                <div className="">
+                                <div>
                                     {val.location &&
                                         <div className="flex items-center ">
                                             <i className="fa fa-map-marker text-red-500" aria-hidden="true"></i>
@@ -61,7 +61,7 @@ export const Experience = ({ experience }) => {
                                         </div>
                                     }
                                     {val.description &&
-                                        <p className="mt-2 whitespace-pre text-gray-700 text-base">
+                                        <p className="mt-2 whitespace-pre-wrap text-gray-700 text-base ">
                                             {val.description}
                                         </p>
                                     }

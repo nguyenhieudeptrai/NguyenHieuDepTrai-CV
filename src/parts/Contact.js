@@ -17,7 +17,7 @@ export const Contact = ({ contacts }) => {
                             setValue(val.link);
                             setTimeout(() => {
                                 setValue(undefined);
-                            }, 10000);
+                            }, 30000);
                         }}
                     />
                 )}
