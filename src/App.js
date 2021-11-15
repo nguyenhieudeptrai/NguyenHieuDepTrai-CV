@@ -190,16 +190,6 @@ function App() {
 
   const [isChangeAvatar, setChangeAvatar] = useState(false);
 
-  const [isFullScreen, setIsFullScreen] = useState(true);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsFullScreen(window.innerWidth > 900);
-    }
-    handleResize();
-    window.addEventListener('resize', handleResize);
-  }, []);
-
   const onScroll = () => {
     const scrollTop = scrollRef.current?.scrollTop;
     setChangeAvatar(scrollTop >= 200);
@@ -211,15 +201,6 @@ function App() {
       behavior: 'smooth'
     });
   }
-  // if (!isFullScreen) {
-  //   return (
-  //     <div className="w-screen h-screen bg-gray-500 flex items-center justify-center">
-  //       <div className="animated-zoom">
-  //         <img src={FullIcon} width="70" height="70" alt="" />
-  //       </div>
-  //     </div>
-  //   )
-  // }
   return (
     <div className="w-screen h-screen bg-blue-500 overflow-y-auto overflow-x-hidden"
       ref={scrollRef}
