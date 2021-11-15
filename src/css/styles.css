@@ -64,8 +64,8 @@ code {
 
 .slides-holder .slides-holder__item_active .slides-item {
   transform: scale(2);
-  color: #e9c002 !important;
-  border: 2px solid #e9c002;
+  color: #fff126 !important;
+  border: 2px solid #fff126;
 }
 
 .slides-holder__item .slides-item i {
@@ -104,14 +104,28 @@ code {
 .content-detail_before {
   opacity: 0;
   transform: translateY(60%);
+  z-index: 0;
 }
 
 .content-detail_active {
   opacity: 1;
   transform: translateY(-50%);
+  z-index: 1;
 }
 
 .content-detail_after {
   opacity: 0;
   transform: translateY(-160%);
+  z-index: 0;
+}
+
+.max-h-2\/3 {
+  max-height: 66.666667%;
+}
+
+.max-h-3\/4{
+  max-height: 75%;
+}
+.-ml-5\.5{
+  margin-left: -1.57rem;
 }

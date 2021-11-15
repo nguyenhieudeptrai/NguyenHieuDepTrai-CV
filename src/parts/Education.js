@@ -1,10 +1,10 @@
+import { Tags } from 'components/Tags';
+import { Title } from 'components/Title';
 import React, { } from 'react';
 export const Education = ({ schools }) => {
     return (
         <div>
-            <h3 className="uppercase font-bold text-base text-xl font-sans pb-2 border-b-2">
-                Educations
-            </h3>
+            <Title name="Educations" />
             {schools.map(val =>
                 <div key={val.name}>
                     <div className="flex ">
@@ -16,7 +16,7 @@ export const Education = ({ schools }) => {
                             <p className="font-bold font-sans">
                                 ({val.from}
                             </p>
-                            <i class="fa fa-long-arrow-right mx-3" aria-hidden="true" />
+                            <i className="fa fa-long-arrow-right mx-3" aria-hidden="true" />
                             <p className="font-bold font-sans">
                                 {val.to})
                             </p>
@@ -48,20 +48,14 @@ export const Education = ({ schools }) => {
                             </p>
                         }
                     </div>
-                    <div className="p-2">
-                        {val.majorType.map(type =>
-                            <span className="inline-block bg-gray-200 hover:bg-red-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                                #{type}
-                            </span>
-                        )}
-                    </div>
+                    <Tags className="p-2" tags={val.majorType} format={(tag) => tag} />
                     <div className="">
                         <p>
                             Certificate:
                         </p>
                         {val.certificates.map((c, index) =>
                             <div key={index}>
-                                <i class="fa fa-certificate text-yellow-500" aria-hidden="true"></i>
+                                <i className="fa fa-certificate text-yellow-500" aria-hidden="true"></i>
                                 <a className="ml-2 cursor-pointer text-green-500 font-bold text-base" href={c.link} target="_blank" rel="noreferrer" >{c.name}</a>
                             </div>
                         )}

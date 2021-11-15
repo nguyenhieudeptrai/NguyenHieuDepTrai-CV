@@ -5,33 +5,41 @@ import { Information } from 'parts/Information';
 import { Experience } from 'parts/Experience';
 import { Reference } from 'parts/Reference';
 import { Skill } from 'parts/Skill';
+import { InformationDetail } from 'parts/InformationDetail';
+import { TimeUpdated } from 'components/TimeUpdated';
+
+const scrollRef = React.createRef();
 
 function App() {
-  const [itemIndex, setItemIndex] = useState({
-    current: 0,
-    last: 4,
-  });
-
-  const updated = "14/11/2021"
+  const updated = "15/11/2021"
   const contacts = [
     {
       name: "phone",
       link: "tel:+84-963-192-405",
+      newPage: false,
     },
     {
       name: "envelope",
       link: "mailto:yeumotnguoi789@gmail.com",
+      newPage: false,
     },
     {
       name: "facebook-square",
       link: "https://www.facebook.com/style.in.my.eyes",
+      newPage: true,
     },
   ]
   const profile = {
-    name: "Nguyễn Hiếu",
+    name: "Nguyễn Trung Hiếu",
     avatar: "https://scontent.fpnh22-4.fna.fbcdn.net/v/t1.6435-9/118139431_1730686400418708_5167623874361533360_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=H9Dsn9htSiQAX-XLGwb&tn=78f5E36gZxCZg_RD&_nc_ht=scontent.fpnh22-4.fna&oh=f08dde4e5de71cbbaeb72dd84dcc54ff&oe=61B82D8F",
     job: "Web/Mobile Deverloper",
-    description: "",
+    region: "Vietnam",
+    gender: "Male",
+    otherLanguages: [
+      "English",
+    ],
+    description: `I have experience in developing web and mobile applications. I want to further develop my experience in big companies.
+    Orient my knowledge horizontally. So it is an advantage when deciding how to solve many problems.`,
   }
   const education = [{
     name: "FPT University",
@@ -54,18 +62,68 @@ function App() {
     ]
   }];
 
-  const experience = [{
-    companyName: "FPT Software",
-    location: "Ho Chi Minh city",
-    type: "Interm",
-    from: "09/2019",
-    to: "03/2020",
-    jobs: [{
-      name: "Deverlop BE",
-      lang: "C#",
-    }],
-    description:"- Completed maintenance on existing programs\n- Build new functionality for software"
-  }]
+  const experience = [
+    {
+      companyName: "FPT Software",
+      companyType: "C",// F or C or G
+      location: "Ho Chi Minh city",
+      type: "Interm",
+      from: "09/2019",
+      to: "03/2020",
+      jobs: [{
+        name: "Back-End",
+        lang: "C# Net.Core",
+      }],
+      description: "- Completed maintenance on existing programs\n- Build new functionality for software"
+    },
+    {
+      companyName: "Freelance job",
+      companyType: "F",// F or C or G
+      from: "12/2020",
+      to: "02/2021",
+      jobs: [{
+        name: "Front-End",
+        lang: "ReactJs",
+      }],
+      description: '"Ostolust" webapp - Stores/Product managerment application'
+    },
+    {
+      companyName: "Capstone Project - FPT University",
+      companyType: "G",// F or C or G
+      from: "01/2020",
+      to: "04/2021",
+      jobs: [
+        {
+          name: "Mobile",
+          lang: "React Native",
+        },
+        {
+          name: "Back-End",
+          lang: "C# Net.Core",
+        },
+        {
+          name: "Front-End",
+          lang: "ReactJs",
+        },
+        {
+          name: "Embedded",
+          lang: "C lang",
+        }
+      ],
+      description: '"Smart Cabinet system" - Used for temporary storage of goods'
+    },
+    {
+      companyName: "Freelance job",
+      companyType: "F",// F or C or G
+      from: "06/2021",
+      to: "07/2021",
+      jobs: [{
+        name: "Front-End",
+        lang: "ReactJs",
+      }],
+      description: "Build an app for real estate search, analysis and transactions, use Google Map"
+    },
+  ];
 
   const parts = [{
     name: "Educations",
@@ -95,98 +153,61 @@ function App() {
     name: "None",
     visible: false,
   },
-  ]
+  ];
+
+  const [isChangeAvatar, setChangeAvatar] = useState(false);
+
+  const onScroll = () => {
+    const scrollTop = scrollRef.current?.scrollTop
+    console.log("scroll", scrollTop);
+    setChangeAvatar(scrollTop >= 200);
+  }
+  const onScrollToBottom = () => {
+    scrollRef.current?.scrollTo({
+      left: 0,
+      top: window.innerHeight * 2,
+      behavior: 'smooth'
+    });
+  }
+
   return (
-    <div className="w-screen h-screen bg-blue-500 overflow-scroll overflow-x-hidden">
-      <div className="fixed h-4 w-full z-10">
+    <div className="w-screen h-screen bg-blue-500 overflow-y-auto overflow-x-hidden"
+      ref={scrollRef}
+      onScroll={onScroll}
+    >
+      <div className="fixed w-full z-10">
         <div className="flex mx-12">
-          <div className="flex flex-1 items-center uppercase">
-            <p className="text-lg bold font-sans text-white">
-              Profile
-            </p>
+          <div className="flex flex-1 items-center">
+            {!isChangeAvatar &&
+              <p className="absolute text-lg bold font-sans text-white uppercase">
+                Profile
+              </p>
+            }
+            <div className={"flex items-center justify-center rounded-lg py-1 px-3 "
+              + (isChangeAvatar ? "border-solid border-white border-2 bg-blue-500 mt-2" : "")
+            }>
+              <img src={profile.avatar} alt="avatar"
+                className={"overflow-hidden w-16 rounded-full border-solid border-white border-2 shadow-xl "
+                  + "transition duration-500 ease-in-out "
+                  + (isChangeAvatar ? "opacity-1" : "opacity-0")} />
+              {isChangeAvatar &&
+                <div className="ml-3 flex flex-col items-start">
+                  <h3 className="text-white text-lg bold font-sans">
+                    {profile.name}
+                  </h3>
+                  <p className="text-white text-sm font-sans font-light">
+                    {profile.job}
+                  </p>
+                </div>
+              }
+            </div>
           </div>
           <Contact contacts={contacts} />
         </div>
       </div>
-      <div className="w-3/4 mx-auto h-screen">
-        <div className="flex justify-center transform translate-y-20">
-          <img src={profile.avatar} className="overflow-hidden w-40 rounded-full border-solid border-white border-2 -mt-3  shadow-xl" />
-        </div>
-        <div className=" bg-white rounded-xl p-4 pt-24">
-          <Information profile={profile} />
-        </div>
-      </div>
-
-      <div className="part2 relative h-screen">
-        <div className="slider overflow-x-hidden">
-          <div className="circular-slider">
-            <div className="slides-holder" style={{
-              transform: `rotateZ(${360 * itemIndex.current / 5 - 90}deg)`,
-              transitionDuration: (Math.abs(itemIndex.last - itemIndex.current)) * 0.3 + "s"
-            }}>
-              {parts.map((val, index) => {
-                if (val.visible) {
-                  return (
-                    <div key={index} className={`slides-holder__item ${itemIndex.current === index ? "slides-holder__item_active" : ""}`}
-                      style={{
-                        transform: `rotateZ(${-360 * index / 5}deg)`
-                      }}>
-                      <div className="bg-blue-500 slides-item" onFocus={() => {
-                        console.log("mess");
-                      }}
-                        onClick={() => {
-                          if (itemIndex.current !== index) {
-                            setItemIndex((prev) => ({
-                              current: index,
-                              last: prev.current,
-                            }));
-                          }
-                        }}>
-                        <i className={`fa ${val.icon} text-2xl`}></i>
-                      </div>
-                    </div>
-                  )
-                } else {
-                  return <div key={index} />
-                }
-              })}
-
-            </div>
-            <div className="descriptions">
-              {parts.map((val, index) =>
-                <div key={index} className={`descriptions__item ${itemIndex.current === index ? " descriptions__item_visible" : ""}`}>
-                  <h1 className="text-white bold uppercase text-2xl">{val.name}</h1>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-        <div className="absolute h-full w-3/5 overflow-hidden">
-          {parts.map((val, index) => {
-            if (val.visible) {
-              return (
-                <div key={index} className={`absolute top-1/2 w-full transition duration-300 ease-in-out my-6 ml-4 bg-white rounded overflow-hidden shadow-lg
-            ${itemIndex.current < index ? "content-detail_before" :
-                    itemIndex.current === index ? "content-detail_active" :
-                      itemIndex.current > index ? "content-detail_after" : ""}
-            `}>
-                  <div className="px-6 py-4  ">
-                    {val.component}
-                  </div>
-                </div>
-              )
-            }
-            else {
-              return <div key={index} />
-            }
-          })}
-
-        </div>
-
-      </div>
-      <div className="absolute bottom-0 right-0 px-10 py-2">
-        <p className="text-white text-sm">Update {updated}</p>
-      </div>
+      <Information profile={profile} isChangeAvatar={isChangeAvatar} onScrollBottom={onScrollToBottom} />
+      <InformationDetail parts={parts} />
+      <TimeUpdated date={updated} className="text-white text-sm" />
     </div >
   );
 }
