@@ -10,7 +10,7 @@ import { TimeUpdated } from 'components/TimeUpdated';
 import FullIcon from 'css/full.svg';
 
 const scrollRef = React.createRef();
-
+let timeTmp = 0;
 function App() {
 
   const updated = "15/11/2021";
@@ -70,7 +70,7 @@ function App() {
       companyName: "FPT Software",
       companyType: "C",// F or C or G
       location: "Ho Chi Minh city",
-      type: "Interm",
+      type: "Intern",
       from: "09/2019",
       to: "03/2020",
       jobs: [{
@@ -189,6 +189,7 @@ function App() {
   ];
 
   const [isChangeAvatar, setChangeAvatar] = useState(false);
+  const [time, setTime] = useState(0);
 
   const onScroll = () => {
     const scrollTop = scrollRef.current?.scrollTop;
@@ -201,13 +202,45 @@ function App() {
       behavior: 'smooth'
     });
   }
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      timeTmp = 6;
+      countDown();
+    }
+  }, []);
+
+  const countDown = () => {
+    if (timeTmp <= 0) {
+      setTime(0);
+      return;
+    }
+    timeTmp--;
+    setTime(timeTmp);
+    setTimeout(countDown, 1000);
+  }
+  if (time > 0) {
+
+    return (
+      <div className="w-screen h-screen bg-gray-500 flex items-center justify-center">
+        <div className="flex flex-col items-center">
+          <p className=" text-white text-center">It will be better if you watch it on your PC/Laptop</p>
+          <p className="pb-2 text-white text-center">{time}s to auto skip</p>
+          <button className="px-6 py-2 text-white mt-4 bg-green-300 rounded-lg"
+            onClick={() => { timeTmp = 0; }}
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+    )
+  }
   return (
     <div className="w-screen h-screen bg-blue-500 overflow-y-auto overflow-x-hidden"
       ref={scrollRef}
       onScroll={onScroll}
     >
       <div className={"fixed w-full z-10 "
-        + (isChangeAvatar ? "bg-blue-500 md:bg-none " : "")}>
+        + (isChangeAvatar ? "bg-blue-500 md:bg-transparent " : "")}>
         <div className="flex md:mx-12 mx-2">
           <div className="flex flex-1 md:items-center items-start z-10">
             {!isChangeAvatar &&
@@ -219,7 +252,7 @@ function App() {
               + (isChangeAvatar ? "border-solid border-white border-2 bg-blue-500 mt-0.5" : "")
             }>
               <img src={profile.avatar} alt="avatar"
-                className={"overflow-hidden w-16 rounded-full border-solid border-white border-2 shadow-xl "
+                className={"overflow-hidden h-16 w-16 rounded-full border-solid border-white border-2 shadow-xl "
                   + "transition duration-500 ease-in-out "
                   + (isChangeAvatar ? "opacity-1" : "opacity-0")} />
               {isChangeAvatar &&

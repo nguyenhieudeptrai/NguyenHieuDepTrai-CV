@@ -2,7 +2,7 @@ import React, { } from 'react';
 
 export const Information = ({ profile, isChangeAvatar, onScrollBottom }) => {
     return (
-        <div className="relative w-3/4 mx-auto h-screen">
+        <div className="relative md:w-3/4 w-4/5 mx-auto h-screen">
             <div className="flex justify-center transform translate-y-20">
                 <img src={profile.avatar} alt="avatar"
                     className={"overflow-hidden w-40 rounded-full border-solid border-white border-2 -mt-3 shadow-xl "
