@@ -190,15 +190,16 @@ function App() {
 
   const [isChangeAvatar, setChangeAvatar] = useState(false);
 
-  const [isFullScreen, setIsFullScreen] = useState(false);
+  const [isFullScreen, setIsFullScreen] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
       setIsFullScreen(window.innerWidth > 900);
     }
     handleResize();
-    window.addEventListener('resize', handleResize)
-  })
+    window.addEventListener('resize', handleResize);
+  }, []);
+
   const onScroll = () => {
     const scrollTop = scrollRef.current?.scrollTop;
     setChangeAvatar(scrollTop >= 200);
