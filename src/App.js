@@ -196,6 +196,7 @@ function App() {
     const handleResize = () => {
       setIsFullScreen(window.innerWidth > 900);
     }
+    handleResize();
     window.addEventListener('resize', handleResize)
   })
   const onScroll = () => {
