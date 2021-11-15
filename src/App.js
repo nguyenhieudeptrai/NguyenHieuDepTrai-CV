@@ -211,25 +211,26 @@ function App() {
       behavior: 'smooth'
     });
   }
-  if (!isFullScreen) {
-    return (
-      <div className="w-screen h-screen bg-gray-500 flex items-center justify-center">
-        <div className="animated-zoom">
-          <img src={FullIcon} width="70" height="70" alt="" />
-        </div>
-      </div>
-    )
-  }
+  // if (!isFullScreen) {
+  //   return (
+  //     <div className="w-screen h-screen bg-gray-500 flex items-center justify-center">
+  //       <div className="animated-zoom">
+  //         <img src={FullIcon} width="70" height="70" alt="" />
+  //       </div>
+  //     </div>
+  //   )
+  // }
   return (
     <div className="w-screen h-screen bg-blue-500 overflow-y-auto overflow-x-hidden"
       ref={scrollRef}
       onScroll={onScroll}
     >
-      <div className="fixed w-full z-10">
-        <div className="flex mx-12">
-          <div className="flex flex-1 items-center">
+      <div className={"fixed w-full z-10 "
+        + (isChangeAvatar ? "bg-blue-500 md:bg-none " : "")}>
+        <div className="flex md:mx-12 mx-2">
+          <div className="flex flex-1 md:items-center items-start z-10">
             {!isChangeAvatar &&
-              <p className="absolute text-lg font-bold font-roboto text-white uppercase">
+              <p className="absolute text-lg font-bold font-roboto text-white uppercase md:top-0 top-3.5">
                 Profile
               </p>
             }

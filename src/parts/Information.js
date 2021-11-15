@@ -14,7 +14,7 @@ export const Information = ({ profile, isChangeAvatar, onScrollBottom }) => {
                     <h3 className="text-xl bold font-roboto">{profile.name}</h3>
                     <p className="mt-2 font-sans font-light">{profile.job} - {profile.experience}</p>
                 </div>
-                <div className="px-28">
+                <div className="md:px-28 px-6">
                     <div className="flex items-center">
                         <i className="fa fa-check mr-3 text-green-500" aria-hidden="true"></i>
                         <p className="font-roboto text-lg">
@@ -47,7 +47,7 @@ export const Information = ({ profile, isChangeAvatar, onScrollBottom }) => {
                     }
                 </div>
             </div>
-            <div className="absolute bottom-6 w-full text-center">
+            <div className="md:absolute md:bottom-6 w-full text-center hidden md:block">
                 <button className="relative m-auto" onClick={onScrollBottom}>
                     <i className="fa fa-arrow-down text-white text-5xl animate-ping" aria-hidden="true"></i>
                     <i className="fa fa-arrow-down text-white text-5xl absolute left-0" aria-hidden="true"></i>

@@ -6,9 +6,9 @@ import { ContactItem } from 'components/ContactItem';
 export const Contact = ({ contacts }) => {
     const [value, setValue] = useState();
     return (
-        <div className="w-1/3">
+        <div className="w-1/3 h-full flex flex-col md:self-auto self-center ">
             <div className="flex items-center justify-end" >
-                <p className="text-md text-right bold font-sans text-white mr-4">
+                <p className="text-md text-right bold font-sans text-white mr-4 md:block hidden">
                     Contacts
                 </p>
                 {contacts.map(val =>
@@ -23,7 +23,7 @@ export const Contact = ({ contacts }) => {
                 )}
             </div>
             {value &&
-                <p className="text-white text-right font-sans underline ">
+                <p className="text-white text-right font-sans underline md:block hidden">
                     {value}
                 </p>}
         </div>

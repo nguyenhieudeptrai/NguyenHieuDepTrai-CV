@@ -101,22 +101,22 @@ code {
   transform: translateX(-50%) translateY(-50%) rotateZ(90deg);
 }
 
-.content-detail_before {
-  opacity: 0;
-  transform: translateY(60%);
-  z-index: 0;
-}
-
-.content-detail_active {
-  opacity: 1;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.content-detail_after {
-  opacity: 0;
-  transform: translateY(-160%);
-  z-index: 0;
+@media (min-width: 768px) {
+  .md\:content-detail_before {
+    opacity: 0;
+    transform: translateY(60%);
+    z-index: 0;
+  }
+  .md\:content-detail_active {
+    opacity: 1;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .md\:content-detail_after {
+    opacity: 0;
+    transform: translateY(-160%);
+    z-index: 0;
+  }
 }
 
 .max-h-2\/3 {

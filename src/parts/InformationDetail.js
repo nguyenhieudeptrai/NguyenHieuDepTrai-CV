@@ -33,8 +33,8 @@ export const InformationDetail = ({ parts }) => {
     }
 
     return (
-        <div className="relative h-screen">
-            <div className="slider overflow-x-hidden">
+        <div className="relative md:h-screen">
+            <div className="slider overflow-x-hidden md:block hidden">
                 <div className="circular-slider">
                     <div className="slides-holder" style={{
                         transform: `rotateZ(${360 * itemIndex.current / 5 - 90}deg)`,
@@ -52,17 +52,17 @@ export const InformationDetail = ({ parts }) => {
                     </div>
                 </div>
             </div>
-            <div className="relative h-full w-2/3">
-                <div className="absolute top-1/2 transform -translate-y-1/2 h-3/4 w-full ml-4 overflow-hidden">
+            <div className="relative h-full md:w-2/3 w-full">
+                <div className="md:absolute md:top-1/2 md:transform md:-translate-y-1/2 md:h-3/4 w-full md:ml-4 md:overflow-hidden">
 
                     {parts.map((val, index) => {
                         if (val.visible) {
                             return (
-                                <div key={index} className={`absolute top-1/2 h-auto max-h-full w-full transition duration-300 ease-in-out 
-                   bg-white rounded-lg shadow-xl  overflow-auto
-            ${itemIndex.current < index ? "content-detail_before" :
-                                        itemIndex.current === index ? "content-detail_active" :
-                                            itemIndex.current > index ? "content-detail_after" : ""}
+                                <div key={index} className={`md:absolute md:top-1/2 h-auto md:max-h-full w-full transition duration-300 ease-in-out 
+                   bg-white rounded-lg shadow-xl  overflow-auto mb-2
+            ${itemIndex.current < index ? "md:content-detail_before" :
+                                        itemIndex.current === index ? "md:content-detail_active" :
+                                            itemIndex.current > index ? "md:content-detail_after" : ""}
             `}>
                                     <div className="relative px-6 py-4">
                                         {val.component}
