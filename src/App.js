@@ -13,7 +13,7 @@ const scrollRef = React.createRef();
 function App() {
 
   const updated = "15/11/2021";
-  
+
   const contacts = [
     {
       name: "phone",
@@ -35,6 +35,7 @@ function App() {
     name: "Nguyễn Trung Hiếu",
     avatar: "https://scontent.fpnh22-4.fna.fbcdn.net/v/t1.6435-9/118139431_1730686400418708_5167623874361533360_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=H9Dsn9htSiQAX-XLGwb&tn=78f5E36gZxCZg_RD&_nc_ht=scontent.fpnh22-4.fna&oh=f08dde4e5de71cbbaeb72dd84dcc54ff&oe=61B82D8F",
     job: "Web/Mobile Deverloper",
+    experience: "1 Year Experience",
     region: "Vietnam",
     gender: "Male",
     otherLanguages: [
@@ -73,7 +74,7 @@ function App() {
       to: "03/2020",
       jobs: [{
         name: "Back-End",
-        lang: "C# Net.Core",
+        lang: "C# .Net Core",
       }],
       description: "- Completed maintenance on existing programs\n- Build new functionality for software"
     },
@@ -100,7 +101,7 @@ function App() {
         },
         {
           name: "Back-End",
-          lang: "C# Net.Core",
+          lang: "C# .Net Core",
         },
         {
           name: "Front-End",
@@ -125,7 +126,26 @@ function App() {
       description: "Build an app for real estate search, analysis and transactions, use Google Map"
     },
   ];
+  const skill = {
+    myself: [
+      "Project Management",
+      "Software Development",
+      "Process improvement",
+      "Teamwork",
 
+    ],
+    software: [
+      "Visual Studio",
+      "Visual Studio Code",
+      "Android Studio",
+      "IntelliJ IDEA",
+      "Git base/UI",
+    ],
+    other: [
+      "Adobe Softwares",
+      "Cinema 4D"
+    ]
+  }
   const parts = [{
     name: "Educations",
     icon: "fa-graduation-cap",
@@ -142,7 +162,7 @@ function App() {
     name: "Skills",
     icon: "fa-thumbs-up",
     visible: true,
-    component: <Skill />
+    component: <Skill myself={skill.myself} softwares={skill.software} others={skill.other} />
   },
   {
     name: "References",
@@ -179,12 +199,12 @@ function App() {
         <div className="flex mx-12">
           <div className="flex flex-1 items-center">
             {!isChangeAvatar &&
-              <p className="absolute text-lg bold font-sans text-white uppercase">
+              <p className="absolute text-lg font-bold font-roboto text-white uppercase">
                 Profile
               </p>
             }
             <div className={"flex items-center justify-center rounded-lg py-1 px-3 "
-              + (isChangeAvatar ? "border-solid border-white border-2 bg-blue-500 mt-2" : "")
+              + (isChangeAvatar ? "border-solid border-white border-2 bg-blue-500 mt-0.5" : "")
             }>
               <img src={profile.avatar} alt="avatar"
                 className={"overflow-hidden w-16 rounded-full border-solid border-white border-2 shadow-xl "
@@ -192,7 +212,7 @@ function App() {
                   + (isChangeAvatar ? "opacity-1" : "opacity-0")} />
               {isChangeAvatar &&
                 <div className="ml-3 flex flex-col items-start">
-                  <h3 className="text-white text-lg bold font-sans">
+                  <h3 className="text-white text-lg font-bold font-roboto">
                     {profile.name}
                   </h3>
                   <p className="text-white text-sm font-sans font-light">

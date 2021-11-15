@@ -1,10 +1,37 @@
 import React, { useState } from 'react';
 
-export const InformationDetail = ({parts,}) => {
+export const InformationDetail = ({ parts }) => {
+
     const [itemIndex, setItemIndex] = useState({
-      current: 0,
-      last: 4,
+        current: 0,
+        last: 4,
     });
+
+    const sliderItem = (item, index) => {
+        if (item.visible) {
+            return (
+                <div key={index} className={`slides-holder__item ${itemIndex.current === index ? "slides-holder__item_active" : ""}`}
+                    style={{
+                        transform: `rotateZ(${-360 * index / 5}deg)`
+                    }}>
+                    <div className={`bg-blue-500 slides-item `}
+                        onClick={() => {
+                            if (itemIndex.current !== index) {
+                                setItemIndex((prev) => ({
+                                    current: index,
+                                    last: prev.current,
+                                }));
+                            }
+                        }}>
+                        <i className={`fa ${item.icon} text-2xl`}></i>
+                    </div>
+                </div>
+            )
+        } else {
+            return <div key={index} />
+        }
+    }
+
     return (
         <div className="relative h-screen">
             <div className="slider overflow-x-hidden">
@@ -13,30 +40,7 @@ export const InformationDetail = ({parts,}) => {
                         transform: `rotateZ(${360 * itemIndex.current / 5 - 90}deg)`,
                         transitionDuration: (Math.abs(itemIndex.last - itemIndex.current)) * 0.3 + "s"
                     }}>
-                        {parts.map((val, index) => {
-                            if (val.visible) {
-                                return (
-                                    <div key={index} className={`slides-holder__item ${itemIndex.current === index ? "slides-holder__item_active" : ""}`}
-                                        style={{
-                                            transform: `rotateZ(${-360 * index / 5}deg)`
-                                        }}>
-                                        <div className="bg-blue-500 slides-item"
-                                            onClick={() => {
-                                                if (itemIndex.current !== index) {
-                                                    setItemIndex((prev) => ({
-                                                        current: index,
-                                                        last: prev.current,
-                                                    }));
-                                                }
-                                            }}>
-                                            <i className={`fa ${val.icon} text-2xl`}></i>
-                                        </div>
-                                    </div>
-                                )
-                            } else {
-                                return <div key={index} />
-                            }
-                        })}
+                        {parts.map((item, index) => sliderItem(item, index))}
 
                     </div>
                     <div className="descriptions">

@@ -11,29 +11,47 @@ export const Information = ({ profile, isChangeAvatar, onScrollBottom }) => {
             </div>
             <div className=" bg-white rounded-xl p-4 pt-24">
                 <div className="text-center px-3 pb-6">
-                    <h3 className="text-xl bold font-sans">{profile.name}</h3>
-                    <p className="mt-2 font-sans font-light">{profile.job}</p>
+                    <h3 className="text-xl bold font-roboto">{profile.name}</h3>
+                    <p className="mt-2 font-sans font-light">{profile.job} - {profile.experience}</p>
                 </div>
                 <div className="px-28">
-                    <div>
-                        <p>Nationaity: {profile.region}</p>
+                    <div className="flex items-center">
+                        <i className="fa fa-check mr-3 text-green-500" aria-hidden="true"></i>
+                        <p className="font-roboto text-lg">
+                            Gender:
+                            <span className="ml-2 font-light">
+                                {profile.gender}
+                            </span>
+                        </p>
                     </div>
-                    <div>
-                        <p>Gender: {profile.gender}</p>
+                    <div className="flex items-center">
+                        <i className="fa fa-check mr-3 text-green-500" aria-hidden="true"></i>
+                        <p className="font-roboto text-lg">
+                            Nationaity:
+                            <span className="ml-2 font-light">
+                                {profile.region}
+                            </span>
+                        </p>
                     </div>
-                    <div>
-                        <p>Other Languages: {profile.otherLanguages.join(", ")}</p>
+                    <div className="flex items-center">
+                        <i className="fa fa-check mr-3 text-green-500" aria-hidden="true"></i>
+                        <p className="font-roboto text-lg">
+                            Other Languages:
+                            <span className="ml-2 font-light">
+                                {profile.otherLanguages.join(", ")}
+                            </span>
+                        </p>
                     </div>
                     {profile.description &&
-                        <p className="mt-2 font-sans font-light">{profile.description}</p>
+                        <p className="mt-2 font-sans font-light text-lg">{profile.description}</p>
                     }
                 </div>
             </div>
             <div className="absolute bottom-6 w-full text-center">
-            <button className="relative m-auto" onClick={onScrollBottom}>
-                <i className="fa fa-arrow-down text-white text-5xl animate-ping" aria-hidden="true"></i>
-                <i className="fa fa-arrow-down text-white text-5xl absolute left-0" aria-hidden="true"></i>
-            </button>
+                <button className="relative m-auto" onClick={onScrollBottom}>
+                    <i className="fa fa-arrow-down text-white text-5xl animate-ping" aria-hidden="true"></i>
+                    <i className="fa fa-arrow-down text-white text-5xl absolute left-0" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
     )
