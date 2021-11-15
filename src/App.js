@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Contact } from 'parts/Contact';
 import { Education } from 'parts/Education';
 import { Information } from 'parts/Information';
@@ -7,6 +7,7 @@ import { Reference } from 'parts/Reference';
 import { Skill } from 'parts/Skill';
 import { InformationDetail } from 'parts/InformationDetail';
 import { TimeUpdated } from 'components/TimeUpdated';
+import FullIcon from 'css/full.svg';
 
 const scrollRef = React.createRef();
 
@@ -189,6 +190,14 @@ function App() {
 
   const [isChangeAvatar, setChangeAvatar] = useState(false);
 
+  const [isFullScreen, setIsFullScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsFullScreen(window.innerWidth > 900);
+    }
+    window.addEventListener('resize', handleResize)
+  })
   const onScroll = () => {
     const scrollTop = scrollRef.current?.scrollTop;
     setChangeAvatar(scrollTop >= 200);
@@ -200,7 +209,15 @@ function App() {
       behavior: 'smooth'
     });
   }
-
+  if (!isFullScreen) {
+    return (
+      <div className="w-screen h-screen bg-gray-500 flex items-center justify-center">
+        <div className="animated-zoom">
+          <img src={FullIcon} width="70" height="70" alt="" />
+        </div>
+      </div>
+    )
+  }
   return (
     <div className="w-screen h-screen bg-blue-500 overflow-y-auto overflow-x-hidden"
       ref={scrollRef}

@@ -123,13 +123,29 @@ code {
   max-height: 66.666667%;
 }
 
-.max-h-3\/4{
+.max-h-3\/4 {
   max-height: 75%;
 }
-.-ml-5\.5{
+
+.-ml-5\.5 {
   margin-left: -1.57rem;
 }
 
-.font-roboto{
+.font-roboto {
   font-family: "Roboto";
+}
+
+.animated-zoom {
+  animation: zoom 2s infinite;
+}
+
+@keyframes zoom {
+  0%, 100% {
+    transform: scale(1);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: scale(1.5);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
 }
