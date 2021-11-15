@@ -11,7 +11,9 @@ import { TimeUpdated } from 'components/TimeUpdated';
 const scrollRef = React.createRef();
 
 function App() {
-  const updated = "15/11/2021"
+
+  const updated = "15/11/2021";
+  
   const contacts = [
     {
       name: "phone",
@@ -28,7 +30,7 @@ function App() {
       link: "https://www.facebook.com/style.in.my.eyes",
       newPage: true,
     },
-  ]
+  ];
   const profile = {
     name: "Nguyễn Trung Hiếu",
     avatar: "https://scontent.fpnh22-4.fna.fbcdn.net/v/t1.6435-9/118139431_1730686400418708_5167623874361533360_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=H9Dsn9htSiQAX-XLGwb&tn=78f5E36gZxCZg_RD&_nc_ht=scontent.fpnh22-4.fna&oh=f08dde4e5de71cbbaeb72dd84dcc54ff&oe=61B82D8F",
@@ -40,7 +42,7 @@ function App() {
     ],
     description: `I have experience in developing web and mobile applications. I want to further develop my experience in big companies.
     Orient my knowledge horizontally. So it is an advantage when deciding how to solve many problems.`,
-  }
+  };
   const education = [{
     name: "FPT University",
     location: "Ho Chi Minh city",
@@ -61,7 +63,6 @@ function App() {
       }
     ]
   }];
-
   const experience = [
     {
       companyName: "FPT Software",
@@ -158,8 +159,7 @@ function App() {
   const [isChangeAvatar, setChangeAvatar] = useState(false);
 
   const onScroll = () => {
-    const scrollTop = scrollRef.current?.scrollTop
-    console.log("scroll", scrollTop);
+    const scrollTop = scrollRef.current?.scrollTop;
     setChangeAvatar(scrollTop >= 200);
   }
   const onScrollToBottom = () => {
