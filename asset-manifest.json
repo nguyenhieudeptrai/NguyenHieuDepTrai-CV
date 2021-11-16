@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/NguyenHieuDepTrai-CV/static/css/main.b7adb21b.chunk.css",
-    "main.js": "/NguyenHieuDepTrai-CV/static/js/main.d5889877.chunk.js",
-    "main.js.map": "/NguyenHieuDepTrai-CV/static/js/main.d5889877.chunk.js.map",
+    "main.css": "/NguyenHieuDepTrai-CV/static/css/main.6409405b.chunk.css",
+    "main.js": "/NguyenHieuDepTrai-CV/static/js/main.7199080b.chunk.js",
+    "main.js.map": "/NguyenHieuDepTrai-CV/static/js/main.7199080b.chunk.js.map",
     "runtime-main.js": "/NguyenHieuDepTrai-CV/static/js/runtime-main.baa7a226.js",
     "runtime-main.js.map": "/NguyenHieuDepTrai-CV/static/js/runtime-main.baa7a226.js.map",
     "static/js/2.f5ec373f.chunk.js": "/NguyenHieuDepTrai-CV/static/js/2.f5ec373f.chunk.js",
     "static/js/2.f5ec373f.chunk.js.map": "/NguyenHieuDepTrai-CV/static/js/2.f5ec373f.chunk.js.map",
     "index.html": "/NguyenHieuDepTrai-CV/index.html",
-    "static/css/main.b7adb21b.chunk.css.map": "/NguyenHieuDepTrai-CV/static/css/main.b7adb21b.chunk.css.map",
+    "static/css/main.6409405b.chunk.css.map": "/NguyenHieuDepTrai-CV/static/css/main.6409405b.chunk.css.map",
     "static/js/2.f5ec373f.chunk.js.LICENSE.txt": "/NguyenHieuDepTrai-CV/static/js/2.f5ec373f.chunk.js.LICENSE.txt",
     "static/media/full.df6c5d66.svg": "/NguyenHieuDepTrai-CV/static/media/full.df6c5d66.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.baa7a226.js",
     "static/js/2.f5ec373f.chunk.js",
-    "static/css/main.b7adb21b.chunk.css",
-    "static/js/main.d5889877.chunk.js"
+    "static/css/main.6409405b.chunk.css",
+    "static/js/main.7199080b.chunk.js"
   ]
 }
