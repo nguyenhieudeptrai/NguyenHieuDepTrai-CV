@@ -10,7 +10,7 @@ export const InformationDetail = ({ parts }) => {
     const sliderItem = (item, index) => {
         if (item.visible) {
             return (
-                <div key={index} className={`slides-holder__item ${itemIndex.current === index ? "slides-holder__item_active" : ""}`}
+                <div key={index} className={`slides-holder__item ${itemIndex.current === index ? "slides-holder__item_active cursor-pointer" : ""}`}
                     style={{
                         transform: `rotateZ(${-360 * index / 5}deg)`
                     }}>
