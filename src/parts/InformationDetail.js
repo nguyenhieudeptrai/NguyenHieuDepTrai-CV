@@ -23,7 +23,7 @@ export const InformationDetail = ({ parts }) => {
                                 }));
                             }
                         }}>
-                        <i className={`fa ${item.icon} text-2xl`}></i>
+                        <i className={`fa ${item.icon} text-3xl`}></i>
                     </div>
                 </div>
             )
@@ -52,7 +52,7 @@ export const InformationDetail = ({ parts }) => {
                     </div>
                 </div>
             </div>
-            <div className="relative h-full md:w-2/3 w-full">
+            <div className="relative h-full md:w-2/4 w-full lg:w-2/3">
                 <div className="md:absolute md:top-1/2 md:transform md:-translate-y-1/2 md:h-3/4 w-full md:ml-4 md:overflow-hidden">
 
                     {parts.map((val, index) => {

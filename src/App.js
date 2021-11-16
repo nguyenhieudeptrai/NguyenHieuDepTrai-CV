@@ -158,17 +158,18 @@ function App() {
       "Cinema 4D"
     ]
   }
-  const parts = [{
-    name: "Educations",
-    icon: "fa-graduation-cap",
-    visible: true,
-    component: <Education schools={education} />
-  },
+  const parts = [
   {
     name: "Experiences",
     icon: "fa-exclamation-circle ",
     visible: true,
     component: <Experience experience={experience} />
+  },
+  {
+    name: "Educations",
+    icon: "fa-graduation-cap",
+    visible: true,
+    component: <Education schools={education} />
   },
   {
     name: "Skills",
@@ -242,9 +243,9 @@ function App() {
       <div className={"fixed w-full z-10 "
         + (isChangeAvatar ? "bg-blue-500 md:bg-transparent " : "")}>
         <div className="flex md:mx-12 mx-2">
-          <div className="flex flex-1 md:items-center items-start z-10">
+          <div className="flex flex-1 items-center z-10">
             {!isChangeAvatar &&
-              <p className="absolute text-lg font-bold font-roboto text-white uppercase md:top-0 top-3.5">
+              <p className="absolute text-lg font-bold font-roboto text-white uppercase ">
                 Profile
               </p>
             }

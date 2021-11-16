@@ -13,8 +13,8 @@ code {
 }
 
 .slider {
-  width: 500px;
-  height: 500px;
+  width: 520px;
+  height: 520px;
   position: absolute;
   top: 50%;
   right: 0;
@@ -24,8 +24,8 @@ code {
 
 .circular-slider {
   border-radius: 50%;
-  width: 90%;
-  height: 90%;
+  width: 87%;
+  height: 87%;
   margin: 5%;
   margin-left: 12%;
   border: 2px solid #FFF;
@@ -45,7 +45,7 @@ code {
 }
 
 .slides-holder__item {
-  height: 500px;
+  height: 510px;
   position: absolute;
   top: -30px;
   transform-origin: center;
@@ -55,15 +55,15 @@ code {
   border: 2px solid #FFF;
   border-radius: 50%;
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 68px;
+  height: 68px;
   transform: scale(1);
   color: #FFF;
   transition: .3s linear all;
 }
 
 .slides-holder .slides-holder__item_active .slides-item {
-  transform: scale(2);
+  transform: scale(1.7);
   color: #fff126 !important;
   border: 2px solid #fff126;
 }
