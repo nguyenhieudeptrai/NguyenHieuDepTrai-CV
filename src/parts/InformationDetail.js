@@ -14,7 +14,7 @@ export const InformationDetail = ({ parts }) => {
                     style={{
                         transform: `rotateZ(${-360 * index / 5}deg)`
                     }}>
-                    <div className={`bg-blue-500 slides-item `}
+                    <div className={`bg-blue-500 slides-item  ${itemIndex.current === index ? "cursor-pointer" : ""}`}
                         onClick={() => {
                             if (itemIndex.current !== index) {
                                 setItemIndex((prev) => ({
