@@ -1,8 +1,9 @@
+import { Detail } from 'components/Detail';
 import { Tags } from 'components/Tags';
 import { Title } from 'components/Title';
 import React, { } from 'react';
 
-export const Experience = ({ experience }) => {
+export const Experience = ({isCollapse, experience }) => {
     return (
         <div className="">
             <Title name="Experiences" />
@@ -11,7 +12,7 @@ export const Experience = ({ experience }) => {
                     <div className="h-full w-1 bg-gray-300 timeline rounded"></div>
                 </div>
                 <div className="flex flex-1 flex-col ml-4 mt-2">
-                    <div className="max-h-full overflow-y-auto">
+                    <div className="max-h-full">
                         {experience.map((val, index) =>
                             <div key={index}>
                                 <div className="flex items-center">
@@ -28,8 +29,7 @@ export const Experience = ({ experience }) => {
                                     <p className="font-bold font-sans">
                                         {val.companyName}
                                     </p>
-                                    <div className="flex items-center ml-4">
-
+                                    <div className="flex items-center ml-2">
                                         <p className="font-bold font-sans">
                                             ({val.from}
                                         </p>
@@ -66,8 +66,8 @@ export const Experience = ({ experience }) => {
                                         </p>
                                     }
                                 </div>
-
                                 <Tags className="p-2" tags={val.jobs} format={(job) => `${job.name} - ${job.lang}`} />
+                                <Detail detailContent={val.details} className="ml-4" isCollapse={isCollapse}/>
                             </div>
                         )}
                     </div>

@@ -6,6 +6,7 @@ export const InformationDetail = ({ parts }) => {
         current: 0,
         last: 4,
     });
+    const [extenseAll, setExtenseAll] = useState(false);
 
     const sliderItem = (item, index) => {
         if (item.visible) {
@@ -23,6 +24,7 @@ export const InformationDetail = ({ parts }) => {
                                 }));
                             }
                         }}>
+                        <div className={`${itemIndex.current === index ? "slides-item-bg animated-zoom " : ""}`} />
                         <i className={`fa ${item.icon} text-3xl`}></i>
                     </div>
                 </div>
@@ -59,13 +61,26 @@ export const InformationDetail = ({ parts }) => {
                         if (val.visible) {
                             return (
                                 <div key={index} className={`md:absolute md:top-1/2 h-auto md:max-h-full w-full transition duration-300 ease-in-out 
-                   bg-white rounded-lg shadow-xl  overflow-auto mb-2
-            ${itemIndex.current < index ? "md:content-detail_before" :
+                                    bg-white rounded-lg shadow-xl overflow-auto mb-2
+                                    ${itemIndex.current < index ? "md:content-detail_before" :
                                         itemIndex.current === index ? "md:content-detail_active" :
                                             itemIndex.current > index ? "md:content-detail_after" : ""}
-            `}>
+                        `}>
+                                    <button className="absolute top-3 right-3 z-10">
+                                        <label htmlFor="extenseInput" className="flex items-center cursor-pointer mb-4 md:mb-0">
+                                            <span className="mr-2 font-bold">Extense all</span>
+                                            <div className="relative extenseAll">
+                                                <input id="extenseInput" type="checkbox" className="hidden"
+                                                    checked={extenseAll}
+                                                    onChange={() => setExtenseAll(!extenseAll)}
+                                                />
+                                                <div className="toggle__line w-12 h-6 bg-gray-200 rounded-full shadow-inner"></div>
+                                                <div className="toggle__dot absolute w-5 h-5 bg-white rounded-full shadow inset-y-0 left-0"></div>
+                                            </div>
+                                        </label>
+                                    </button>
                                     <div className="relative px-6 py-4">
-                                        {val.component}
+                                        {React.cloneElement(val.component, { isCollapse: extenseAll })}
                                     </div>
                                 </div>
                             )
