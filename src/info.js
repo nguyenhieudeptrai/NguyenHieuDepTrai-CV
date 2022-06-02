@@ -1,6 +1,6 @@
 import avatar from 'images/selected.png';
 
-const updated = "01/06/2021";
+const updated = "03/06/2021";
 
 const contacts = [
     {
