@@ -66,7 +66,7 @@ export const InformationDetail = ({ parts }) => {
                                         itemIndex.current === index ? "md:content-detail_active" :
                                             itemIndex.current > index ? "md:content-detail_after" : ""}
                         `}>
-                                    <button className="absolute top-3 right-3 z-10">
+                                    <button className="absolute top-3 right-3 z-10 md:block hidden">
                                         <label htmlFor="extenseInput" className="flex items-center cursor-pointer mb-4 md:mb-0">
                                             <span className="mr-2 font-bold">Extense all</span>
                                             <div className="relative extenseAll">

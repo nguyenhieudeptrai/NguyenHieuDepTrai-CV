@@ -20,7 +20,7 @@ export const Detail = ({ isCollapse, detailContent = [], className = "" }) => {
                     </div>
                 )}
             </div>
-            <button className={`border-2 rounded-md px-3 mb-2 ${isCollapse ? "bg-gray-200" : "hover:border-black "}`}
+            <button className={` border-2 rounded-md px-3 mb-2 ${isCollapse ? "bg-gray-200" : "hover:border-black "}`}
                 onClick={() => setViewDetail(!viewDetail)}
             >
                 <span className="mr-2">{(viewDetail || isCollapse) ? "Collapse" : "View detail"}</span>
