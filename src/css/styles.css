@@ -20,7 +20,7 @@ code {
   padding-left: 20px;
   top: 50%;
   right: 0;
-  transform: translate(100px, -50%);
+  transform: translate(200px, -50%);
   overflow-y: hidden;
 }
 
