@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/NguyenHieuDepTrai-CV/static/css/main.d3b53df1.chunk.css",
+    "main.css": "/NguyenHieuDepTrai-CV/static/css/main.96e5d1b0.chunk.css",
     "main.js": "/NguyenHieuDepTrai-CV/static/js/main.54afb0f6.chunk.js",
     "main.js.map": "/NguyenHieuDepTrai-CV/static/js/main.54afb0f6.chunk.js.map",
     "runtime-main.js": "/NguyenHieuDepTrai-CV/static/js/runtime-main.baa7a226.js",
@@ -8,14 +8,14 @@
     "static/js/2.f5ec373f.chunk.js": "/NguyenHieuDepTrai-CV/static/js/2.f5ec373f.chunk.js",
     "static/js/2.f5ec373f.chunk.js.map": "/NguyenHieuDepTrai-CV/static/js/2.f5ec373f.chunk.js.map",
     "index.html": "/NguyenHieuDepTrai-CV/index.html",
-    "static/css/main.d3b53df1.chunk.css.map": "/NguyenHieuDepTrai-CV/static/css/main.d3b53df1.chunk.css.map",
+    "static/css/main.96e5d1b0.chunk.css.map": "/NguyenHieuDepTrai-CV/static/css/main.96e5d1b0.chunk.css.map",
     "static/js/2.f5ec373f.chunk.js.LICENSE.txt": "/NguyenHieuDepTrai-CV/static/js/2.f5ec373f.chunk.js.LICENSE.txt",
     "static/media/selected.609ea5a2.png": "/NguyenHieuDepTrai-CV/static/media/selected.609ea5a2.png"
   },
   "entrypoints": [
     "static/js/runtime-main.baa7a226.js",
     "static/js/2.f5ec373f.chunk.js",
-    "static/css/main.d3b53df1.chunk.css",
+    "static/css/main.96e5d1b0.chunk.css",
     "static/js/main.54afb0f6.chunk.js"
   ]
 }
