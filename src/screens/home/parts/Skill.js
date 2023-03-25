@@ -1,11 +1,11 @@
-import { Title } from 'components/Title';
+import { Title } from '../components/Title';
 import React, { } from 'react';
 
 export const Skill = ({ myself, softwares, others }) => {
     return (
         <div>
             <Title name="Skills" />
-            <div className="flex pt-4">
+            <div className="flex px-6 py-4">
                 <div className="flex flex-1 flex-col">
                     <p className="font-roboto font-bold border-b-2 border-green-800 w-4/5">Myself</p>
                     <div>

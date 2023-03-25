@@ -1,13 +1,32 @@
-import { Detail } from 'components/Detail';
-import { Tags } from 'components/Tags';
-import { Title } from 'components/Title';
-import React, { } from 'react';
+import { Detail } from '../components/Detail';
+import { Tags } from '../components/Tags';
+import { Title } from '../components/Title';
+import React, { useState } from 'react';
 
-export const Experience = ({isCollapse, experience }) => {
+export const Experience = ({ experience }) => {
+    const [isCollapse, setExtenseAll] = useState(false);
+    const onCollapse = () => {
+        setExtenseAll(!isCollapse);
+    }
     return (
-        <div className="">
-            <Title name="Experiences" />
-            <div className="flex mt-2">
+        <div>
+            <div className='sticky top-0 flex items-center border-b-2 bg-white z-10'>
+                <Title name="Experiences" className='flex-1 border-b-0' />
+                <button className='py-3 px-4' >
+                    <label htmlFor="extenseInput" className="flex items-center cursor-pointer mb-4 md:mb-0">
+                        <span className="mr-2 font-bold">Extense all</span>
+                        <div className="relative extenseAll">
+                            <input id="extenseInput" type="checkbox" className="hidden"
+                                checked={isCollapse}
+                                onChange={onCollapse}
+                            />
+                            <div className="toggle__line w-12 h-6 bg-gray-200 rounded-full shadow-inner"></div>
+                            <div className="toggle__dot absolute w-5 h-5 bg-white rounded-full shadow inset-y-0 left-0"></div>
+                        </div>
+                    </label>
+                </button>
+            </div>
+            <div className="px-6 py-4 flex mt-2">
                 <div>
                     <div className="h-full w-1 bg-gray-300 timeline rounded"></div>
                 </div>
@@ -67,7 +86,7 @@ export const Experience = ({isCollapse, experience }) => {
                                     }
                                 </div>
                                 <Tags className="p-2" tags={val.jobs} format={(job) => `${job.name} - ${job.lang}`} />
-                                <Detail detailContent={val.details} className="ml-4" isCollapse={isCollapse}/>
+                                <Detail detailContent={val.details} className="ml-4" isCollapse={isCollapse} />
                             </div>
                         )}
                     </div>

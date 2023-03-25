@@ -1,6 +1,8 @@
-import avatar from 'images/selected.png';
+import avatar from './images/selected.png';
+import moment from 'moment/moment';
 
-const updated = "03/06/2021";
+const START_EXPERIENCE_YEAR = "2019-09-01";
+const updated = "18/03/2023";
 
 const contacts = [
     {
@@ -23,14 +25,13 @@ const profile = {
     name: "Nguyễn Trung Hiếu",
     avatar: avatar,
     job: "Web/Mobile Deverloper",
-    experience: "1 Year Experience",
+    experience: Math.round(moment().diff(moment(START_EXPERIENCE_YEAR), "months") * 10 / 12) / 10 + " Years Experience",
     region: "Vietnam",
     gender: "Male",
     otherLanguages: [
         "English",
     ],
-    description: `I have experience in developing web and mobile applications. I want to further develop my experience in big companies.
-    Orient my knowledge horizontally. So it is an advantage when deciding how to solve many problems.`,
+    description: `I have experience in developing web and mobile applications, especially Reactjs and React-Native. Orient my knowledge horizontally. So it is an advantage when deciding how to solve many problems and work with many programming languages`,
 };
 
 const education = [{
@@ -62,10 +63,9 @@ const experience = [
         type: "Intern",
         from: "09/2019",
         to: "03/2020",
-        jobs: [{
-            name: "Back-End",
-            lang: "C# .Net Core",
-        }],
+        jobs: [
+            { name: "Back-End", lang: "C# .Net Core" }
+        ],
         description: "- Completed maintenance on existing programs\n- Build new functionality for software",
         details: [
             {
@@ -93,10 +93,9 @@ const experience = [
         companyType: "F",// F or C or G
         from: "12/2020",
         to: "02/2021",
-        jobs: [{
-            name: "Front-End",
-            lang: "ReactJs",
-        }],
+        jobs: [
+            { name: "Front-End", lang: "ReactJs" }
+        ],
         description: '"Ostolust" webapp - Stores/Product managerment application',
         details: [
             {
@@ -125,22 +124,10 @@ const experience = [
         from: "01/2020",
         to: "04/2021",
         jobs: [
-            {
-                name: "Mobile",
-                lang: "React Native",
-            },
-            {
-                name: "Back-End",
-                lang: "C# .Net Core",
-            },
-            {
-                name: "Front-End",
-                lang: "ReactJs",
-            },
-            {
-                name: "Embedded",
-                lang: "C lang",
-            }
+            { name: "Mobile", lang: "React Native" },
+            { name: "Back-End", lang: "C# .Net Core" },
+            { name: "Front-End", lang: "ReactJs" },
+            { name: "Embedded", lang: "C lang" }
         ],
         description: '"Smart Cabinet" system - Used for temporary storage of goods',
         details: [
@@ -225,10 +212,9 @@ const experience = [
         companyType: "F",// F or C or G
         from: "06/2021",
         to: "07/2021",
-        jobs: [{
-            name: "Front-End",
-            lang: "ReactJs",
-        }],
+        jobs: [
+            { name: "Front-End", lang: "ReactJs" }
+        ],
         description: "Build an app for real estate search, analysis and transactions, use Google Map",
         details: [
             {
@@ -253,10 +239,9 @@ const experience = [
         companyType: "F",// F or C or G
         from: "10/2021",
         to: "03/2022",
-        jobs: [{
-            name: "Front-End",
-            lang: "React Native",
-        }],
+        jobs: [
+            { name: "Front-End", lang: "React Native" }
+        ],
         description: '"Traverlog" mobile aplication - Build a social app to search camping or traveling when you have free time and want to be go out, using Google Maps API.',
         details: [
             {
@@ -289,10 +274,9 @@ const experience = [
         companyType: "F",// F or C or G
         from: "11/2021",
         to: "05/2022",
-        jobs: [{
-            name: "Front-End",
-            lang: "ReactJs",
-        }],
+        jobs: [
+            { name: "Front-End", lang: "ReactJs" }
+        ],
         description: '"The Second Life - power by Thunderstone" micro pages of webapp - search for clothes by brand in the chain\'s inventory and track the product by email or order it directly',
         details: [
             {
@@ -312,6 +296,58 @@ const experience = [
                     "Apply authen JWT of Server and Auth0 custom",
                     "Create modal and notification slide for app",
                     "Create responsive"
+                ]
+            },
+        ]
+    },
+    {
+        companyName: "Freelance job",
+        companyType: "F",// F or C or G
+        from: "03/2023",
+        to: "02/2023",
+        jobs: [
+            { name: "Front-End", lang: "React Native" },
+        ],
+        description: `My job is to build an new mobile app for Chinese learning. This mobile app call group for online class or study offline with videos`,
+        details: [
+            {
+                title: "Technical Knowledge",
+                lines: [
+                    "Stringee",
+                    "MeetHour",
+                    "Sockets-Realtime"
+                ]
+            },
+            {
+                title: "Describe the job",
+                lines: [
+                    "Design the UX/UI for students screen",
+                    "Enbed the Stringee SDK and customize the screen"
+                ]
+            },
+        ]
+    },
+    {
+        companyName: "CREASIA",
+        companyType: "C",// F or C or G
+        from: "20/06/2022",
+        to: "working",
+        jobs: [
+            { name: "Front-End minigame", lang: "Javascript" },
+            { name: "Front-End", lang: "ReactJs" },
+            { name: "Front-End", lang: "React Native" },
+            { name: "Back-End", lang: ".Net Core" },
+        ],
+        description: `"CREASIA" is marketing business. My job is to build an new admin website and mobile app to manage company's internal affairs. And, build a mini Web/Mobile application to run with some marketing events include minigames, interactive activities app in the website or tablet.`,
+        details: [
+            {
+                title: "Describe the job",
+                lines: [
+                    "Create a game to serve the event: Bubble Shotter, Sliding Puzzle, Lucky Dropdown, Picture Matching,...",
+                    "Create the structure for admin website in ReactJs and React Native",
+                    "Code the flow of processing, send OTP, send email, encrypt and decrypt data,...",
+                    "Work with chartsjs",
+                    "Design the UX/UI responsive"
                 ]
             },
         ]

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 
-import { ContactItem } from 'components/ContactItem';
+import { ContactItem } from '../components/ContactItem';
 
 export const Contact = ({ contacts }) => {
     const [value, setValue] = useState();
