@@ -176,3 +176,50 @@ code {
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
+
+
+.message-container {
+  transition: all 0.3s ease-in-out;
+}
+
+.message-win-bg {
+  box-shadow: inset 0px 0px 14px 9px rgba(0, 0, 0, 0.28);
+  background-image: url("data:image/svg+xml, %3Csvg width='100%25' height='100%25' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='calc(100%25 - 27px)' height='93%25' x='14' y='15' stroke='%23fbe570' stroke-width='13' stroke-dasharray='0%25 22%25' stroke-linecap='round' fill='transparent' stroke-dashoffset='0' rx='29' ry='29' /%3E%3Crect width='calc(100%25 - 27px)' height='93%25' x='14' y='15' stroke='%23a19246' stroke-width='13' stroke-dasharray='0%25 22%25' stroke-linecap='round' fill='transparent' stroke-dashoffset='40' rx='29' ry='29' /%3E%3C/svg%3E");
+  animation: borderAnimation 1s infinite;
+}
+
+.message-win-bg .win-content {
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.28);
+}
+
+.message-win-bg .btn-continuous {
+  transform: translateY(0);
+  transition: all 0.1s ease-in;
+}
+
+.message-win-bg .btn-continuous:hover {
+  transform: translateY(-4px);
+  animation: btnWin 0.5s infinite;
+}
+
+@keyframes btnWin {
+  from {
+    color: #4e1c1c;
+    background-color: #f5d316;
+  }
+
+  to {
+    color: #9e3939;
+    background-color: #ddcf80;
+  }
+}
+
+@keyframes borderAnimation {
+  from {
+    background-image: url("data:image/svg+xml, %3Csvg width='100%25' height='100%25' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='calc(100%25 - 27px)' height='93%25' x='14' y='15' stroke='%23fbe570' stroke-width='13' stroke-dasharray='0%25 22%25' stroke-linecap='round' fill='transparent' stroke-dashoffset='0' rx='29' ry='29' /%3E%3Crect width='calc(100%25 - 27px)' height='93%25' x='14' y='15' stroke='%23a19246' stroke-width='13' stroke-dasharray='0%25 22%25' stroke-linecap='round' fill='transparent' stroke-dashoffset='40' rx='29' ry='29' /%3E%3C/svg%3E")
+  }
+
+  to {
+    background-image: url("data:image/svg+xml, %3Csvg width='100%25' height='100%25' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='calc(100%25 - 27px)' height='93%25' x='14' y='15' stroke='%23a19246' stroke-width='13' stroke-dasharray='0%25 22%25' stroke-linecap='round' fill='transparent' stroke-dashoffset='0' rx='29' ry='29' /%3E%3Crect width='calc(100%25 - 27px)' height='93%25' x='14' y='15' stroke='%23fbe570' stroke-width='13' stroke-dasharray='0%25 22%25' stroke-linecap='round' fill='transparent' stroke-dashoffset='40' rx='29' ry='29' /%3E%3C/svg%3E")
+  }
+}

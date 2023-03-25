@@ -10,9 +10,9 @@ export const Experience = ({ experience }) => {
     }
     return (
         <div>
-            <div className='sticky top-0 flex items-center border-b-2 bg-white z-10'>
-                <Title name="Experiences" className='flex-1 border-b-0' />
-                <button className='py-3 px-4' >
+            <div className='sticky top-0 flex items-end bg-white z-10'>
+                <Title name="Experiences" className='flex-1' />
+                <button className='py-3 px-4 border-b-2' >
                     <label htmlFor="extenseInput" className="flex items-center cursor-pointer mb-4 md:mb-0">
                         <span className="mr-2 font-bold">Extense all</span>
                         <div className="relative extenseAll">

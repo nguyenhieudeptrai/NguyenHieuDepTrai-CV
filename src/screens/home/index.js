@@ -6,7 +6,7 @@ import { Experience } from './parts/Experience';
 import { Skill } from './parts/Skill';
 import { InformationDetail } from './parts/InformationDetail';
 import { TimeUpdated } from './components/TimeUpdated';
-import { contacts, education, experience, profile, skill, updated } from './info';
+import { contacts, education, experience, profile, skill, updated, references } from 'info';
 import { Reference } from './parts/Reference';
 
 const scrollRef = React.createRef();
@@ -32,7 +32,7 @@ function HomeScreen() {
         {
             name: "References",
             icon: "fa-bookmark",
-            component: <Reference />
+            component: <Reference referenceSources={references} />
         },
     ];
 

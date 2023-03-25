@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "clsx": "^1.2.1",
+    "framer-motion": "^10.9.1",
     "gh-pages": "^3.2.3",
     "moment": "^2.29.4",
     "react": "^18.2.0",
