@@ -381,7 +381,11 @@ const references = [
     {
         name: "My Minigame", url: "/minigame",
         description: "(It's my games that I do it myseft)",
-    }
+    },
+    {
+        name: " Demo Content Page", url: "/demo-pages",
+        description: "(It's my screen + animation that I do it myseft)",
+    },
 ]
 
 export {

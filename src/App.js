@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import HomeScreen from 'screens/home';
+import { LandingPage } from 'screens/layout-demo/landing-page';
 import Minigame from 'screens/minigame';
 import AppleDropdown from 'screens/minigame/AppleDropdown';
 import BubbleShooter from 'screens/minigame/BubbleShooter';
@@ -15,6 +16,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeScreen />} />
+        <Route path="/demo-pages" >
+          <Route path="" element={<LandingPage />} />
+        </Route>
         <Route path="/minigame" >
           <Route path="" element={<Minigame />} />
           <Route path='apple-dropdown' element={<AppleDropdown />} />

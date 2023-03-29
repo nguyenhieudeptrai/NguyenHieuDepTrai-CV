@@ -17,7 +17,7 @@ export const InformationDetail = ({ parts = [] }) => {
     useEffect(() => {
         sliderRef.current?.addEventListener('wheel', onScroll);
         return () => {
-            sliderRef.current?.removeEventListener('wheel', () => { });
+            sliderRef.current?.removeEventListener('wheel', onScroll);
         }
     }, []);
 

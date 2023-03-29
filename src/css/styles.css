@@ -223,3 +223,53 @@ code {
     background-image: url("data:image/svg+xml, %3Csvg width='100%25' height='100%25' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='calc(100%25 - 27px)' height='93%25' x='14' y='15' stroke='%23a19246' stroke-width='13' stroke-dasharray='0%25 22%25' stroke-linecap='round' fill='transparent' stroke-dashoffset='0' rx='29' ry='29' /%3E%3Crect width='calc(100%25 - 27px)' height='93%25' x='14' y='15' stroke='%23fbe570' stroke-width='13' stroke-dasharray='0%25 22%25' stroke-linecap='round' fill='transparent' stroke-dashoffset='40' rx='29' ry='29' /%3E%3C/svg%3E")
   }
 }
+
+/* Customize Scrollbar */
+.my-cv::-webkit-scrollbar, .landing-page-demo::-webkit-scrollbar {
+  width: 12px;
+}
+
+.my-cv::-webkit-scrollbar-track {
+  background: #059669;
+}
+
+.my-cv::-webkit-scrollbar-thumb {
+  background: #fdfdfd;
+  border-radius: 10px;
+}
+
+.landing-page-demo::-webkit-scrollbar-thumb {
+  background: #aeaeae;
+  border-radius: 10px;
+}
+
+/*  End custom */
+
+.landing-page-demo::-webkit-scrollbar-track {
+  background: #000;
+}
+
+.perspective-100 {
+  perspective: 100px;
+}
+
+.rotate-up {
+  transform-style: preserve-3d;
+  opacity: 0;
+  z-index: 0;
+  transform: translateX(-50%) translateY(50%) translateZ(-50px) rotateX(-90deg);
+}
+
+.rotate-down {
+  transform-style: preserve-3d;
+  opacity: 0;
+  z-index: 0;
+  transform: translateX(-50%) translateY(-50%) translateZ(-50px) rotateX(90deg);
+}
+
+.rotate-front {
+  opacity: 1;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transform: translateX(-50%) translateY(0%) translateZ(0) rotateX(0deg);
+}

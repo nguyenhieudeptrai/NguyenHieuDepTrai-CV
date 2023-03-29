@@ -85,7 +85,7 @@ function HomeScreen() {
         )
     }
     return (
-        <div className="w-screen h-screen bg-emerald-600 overflow-y-auto"
+        <div className="my-cv w-screen h-screen bg-emerald-600 overflow-y-auto"
             ref={scrollRef}
             onScroll={onScroll}
         >
