@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export const NavItem = ({ items = [] }) => {
+export const NavItem = ({ items = [], highlight = false }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const groupRef = useRef();
 
@@ -24,8 +24,8 @@ export const NavItem = ({ items = [] }) => {
     if (items.length > 1) {
         const subMenu = items.filter((_, i) => i !== 0);
         return (
-            <div className='relative w-40 group'>
-                <li className="p-4 bg-gray-800 cursor-pointer hover:underline"
+            <div className='relative w-32 group'>
+                <li className="p-2 cursor-pointer hover:underline"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     {items[0].name}
                 </li>
@@ -36,7 +36,7 @@ export const NavItem = ({ items = [] }) => {
                     )}>
                     <ul >
                         {subMenu.map((v, i) => (
-                            <li key={i} className="py-2">
+                            <li key={i} className="py-2 bg-gray-900 mt-2">
                                 <Link to={v.url} className="p-4 hover:underline">
                                     {v.name}
                                 </Link>
@@ -49,9 +49,9 @@ export const NavItem = ({ items = [] }) => {
     }
 
     return (
-        <div className='relative w-40'>
-            <li className="p-4 bg-gray-800 cursor-pointer peer">
-                <Link to={items[0].url} className="hover:underline">
+        <div className='relative w-32'>
+            <li className={clsx("p-2 cursor-pointer hover:underline rounded-md", highlight && "bg-blue-600 text-center")}>
+                <Link to={items[0].url} className="font-semibold ">
                     {items[0].name}
                 </Link>
             </li>

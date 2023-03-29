@@ -32,7 +32,9 @@ export const BoxShape = ({ config = {}, className, border, color, children }) =>
                     />
                 </g>
             </svg>
-            {children}
+            <div className="p-2">
+                {children}
+            </div>
         </div>
     )
 }

@@ -8,7 +8,7 @@ export const Reference = ({ referenceSources = [] }) => {
             <Title name="References" />
             <div className='py-3 px-4'>
                 {referenceSources.map((v, i) => (
-                    <div key={i} className="h-48">
+                    <div key={i} className="mb-4">
                         &rarr;  <Link to={v.url} className='font-bold hover:underline text-sky-600'>{v.name}</Link>
                         <p className='italic ml-4'>
                             {v.description}
