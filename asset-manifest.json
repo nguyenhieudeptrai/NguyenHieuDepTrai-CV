@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/NguyenHieuDepTrai-CV/static/css/main.3fa9e213.css",
-    "main.js": "/NguyenHieuDepTrai-CV/static/js/main.88606647.js",
+    "main.css": "/NguyenHieuDepTrai-CV/static/css/main.b570b6c5.css",
+    "main.js": "/NguyenHieuDepTrai-CV/static/js/main.61264e37.js",
     "static/media/selected.png": "/NguyenHieuDepTrai-CV/static/media/selected.609ea5a2bb89be6418a3.png",
+    "static/media/tv.png": "/NguyenHieuDepTrai-CV/static/media/tv.bee867df1bbfc8a90e13.png",
+    "static/media/tv-bg.png": "/NguyenHieuDepTrai-CV/static/media/tv-bg.e6bc6fe2f25fad29c1d8.png",
     "index.html": "/NguyenHieuDepTrai-CV/index.html",
     "static/media/sent-icon.svg": "/NguyenHieuDepTrai-CV/static/media/sent-icon.5ebe0faa57d7be5a2c0a00a89b5f3614.svg",
-    "main.3fa9e213.css.map": "/NguyenHieuDepTrai-CV/static/css/main.3fa9e213.css.map",
-    "main.88606647.js.map": "/NguyenHieuDepTrai-CV/static/js/main.88606647.js.map"
+    "static/media/bg-demo-page.svg": "/NguyenHieuDepTrai-CV/static/media/bg-demo-page.359842a1072d06e7135c142cc76d08d8.svg",
+    "main.b570b6c5.css.map": "/NguyenHieuDepTrai-CV/static/css/main.b570b6c5.css.map",
+    "main.61264e37.js.map": "/NguyenHieuDepTrai-CV/static/js/main.61264e37.js.map"
   },
   "entrypoints": [
-    "static/css/main.3fa9e213.css",
-    "static/js/main.88606647.js"
+    "static/css/main.b570b6c5.css",
+    "static/js/main.61264e37.js"
   ]
 }
