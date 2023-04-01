@@ -238,13 +238,34 @@ code {
   border-radius: 10px;
 }
 
+.bg-color::after {
+  content: "";
+  position: absolute;
+  height: 60vh;
+  width: 60vh;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(50vh);
+}
+
+.bg-color::before {
+  content: "";
+  position: absolute;
+  height: 60vh;
+  width: 60vh;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(50vh);
+}
+
 .landing-page-demo::-webkit-scrollbar-thumb {
   background: #aeaeae;
   border-radius: 10px;
 }
 
 /*  End custom */
-
 .landing-page-demo::-webkit-scrollbar-track {
   background: #000;
 }
@@ -280,6 +301,20 @@ code {
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 0;
+}
+
+.tv-part::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* transform: translateX(-50%) translateY(-50%); */
+  z-index: -1;
+  border-radius: 50%;
+  background-color: #217fdc;
+  filter: blur(50vh);
 }
 
 .tv-bg::before {

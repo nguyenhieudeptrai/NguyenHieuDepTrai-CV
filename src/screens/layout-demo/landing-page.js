@@ -174,7 +174,7 @@ export const LandingPage = () => {
     }
     return (
         <div ref={mainRef}
-            className='landing-page-demo bg-black text-white h-screen relative overflow-auto overflow-x-hidden'>
+            className='landing-page-demo bg-black text-white h-screen relative overflow-auto overflow-x-hidden z-0'>
             <header className='flex p-10 absolute w-full z-10'>
                 <div className='flex-1'>
                     <p className='text-4xl'>LOGO</p>
@@ -191,7 +191,7 @@ export const LandingPage = () => {
                 </div>
             </header>
             <main>
-                <div className='flex h-screen items-center relative px-6'>
+                <div className='flex h-screen items-center relative px-6 z-0 bg-color before:top-0 before:left-1/3 after:bottom-0 after:left-2/3 before:bg-orange-400 after:bg-purple-600'>
                     <BgImage className='absolute left-1/2 -top-[10%] -translate-x-1/2 w-[120%] h-full stroke-blue-600 blur-[3px]' />
                     <div className={clsx('flex-1 transition-all ease-in-out duration-500',
                         page.current.index == 0 ? "translate-x-0 opacity-100" : "-translate-x-1/2 opacity-0"
@@ -217,19 +217,19 @@ export const LandingPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={clsx('flex-1 relative h-full flex items-center justify-center transition-all ease-in-out duration-500',
+                    <div className={clsx('z-0 flex-1 relative h-full flex items-center justify-center transition-all ease-in-out duration-500',
                         page.current.index == 0 ? "translate-x-0 opacity-100" : "translate-x-1/2 opacity-0"
                     )}>
                         <img className='h-2/4 rounded-2xl' src="https://picsum.photos/600/600" />
                     </div>
                 </div>
                 <Title ref={titleRef} />
-                <div className='flex flex-col items-center h-screen relative px-6 '>
-                    <div className='flex items-center flex-1'>
+                <div className='flex flex-col items-center h-screen w-screen relative bg-color px-6 after:top-1/2 after:left-0 after:bg-cyan-300 before:top-1/2 before:left-full before:bg-blue-600'>
+                    <div className='flex items-center flex-1 bg-color'>
                         {Array(4).fill("").map((v, i) => (
                             <div key={i}
                                 style={{ transitionDelay: 100 * (i + 1) + "ms" }}
-                                className={clsx('flex-1 mx-4 border p-4 h-3/4 rounded-md',
+                                className={clsx('flex-1 mx-4 border p-4 h-3/4 rounded-xl',
                                     `transition-all ease-in-out duration-700`,
                                     page.current.index == 1 ? "translate-y-0 opacity-100" :
                                         page.current.index > 1 ? "-translate-y-1/2 opacity-0" :
@@ -247,16 +247,16 @@ export const LandingPage = () => {
                     </div>
                 </div>
                 <div className='flex flex-col items-center justify-center h-screen w-full relative '>
-                    <div className={clsx('transition-all duration-500 delay-500', page.current.index == 2 ? "scale-100 translate-x-8 -translate-y-20" : "scale-75 translate-x-8 -translate-y-0")}>
-                        <div className='tv-bg pl-20 pr-[320px] pt-[270px] pb-28'>
-                            <iframe className='flex h-[490px] w-[660px]'
+                    <div className={clsx('tv-part transition-all duration-500 delay-500', page.current.index == 2 ? "scale-100 translate-x-8 -translate-y-20" : "scale-75 translate-x-8 -translate-y-0")}>
+                        <div className='tv-bg pl-[76px] pr-[320px] pt-[270px] pb-[100px]'>
+                            <iframe className='flex h-[490px] w-[670px]'
                                 src={"https://www.youtube.com/embed/D1PvIWdJ8xo?rel=0&color=white&fs=0&autoplay=" + (page.current.index == 2 ? "1" : "0")}
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope"
                             />
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-col items-center h-screen relative px-6'>
+                <div className='flex flex-col items-center h-screen relative px-6  bg-color before:bg-orange-400 before:top-full before:left-0'>
                     <div className='flex items-center flex-1 space-x-10  perspective-100'>
                         <ItemScroling delay={700}
                             className="relative flex items-center justify-center transition-all ease-in-out duration-700"
@@ -275,7 +275,7 @@ export const LandingPage = () => {
                         </ItemScroling>
                     </div>
                 </div >
-                <div className='flex flex-col items-center h-screen relative px-6'>
+                <div className='flex flex-col items-center h-screen relative z-0 px-6 bg-color before:bg-blue-500 before:top-full before:left-2/3 after:top-0 after:left-1/3'>
                     <div className='flex items-center flex-1 relative'>
                         <FloatingCard delay={1700}
                             width={150}
@@ -283,10 +283,10 @@ export const LandingPage = () => {
                             spaceX={10}
                             started={page.current.index == 4} >
                             {Array(6).fill("").map((v, i) => (
-                                <div key={i} className='flex flex-col items-center border border-white bg-black p-2 rounded-lg'>
+                                <div key={i} className='flex flex-col items-center border border-white bg-black p-2 rounded-xl'>
                                     <img src="https://picsum.photos/200/200" className='h-20 w-20 rounded-full object-cover' />
                                     <p className='text-xl mt-2 text-center'>Lorem ipsum {i}</p>
-                                    <p className='mt-2 text-xs text-center italic'>Short description</p>
+                                    <p className='mt-2 text-xs text-center text-purple-500'>Short description</p>
                                 </div>
                             ))}
                         </FloatingCard>
