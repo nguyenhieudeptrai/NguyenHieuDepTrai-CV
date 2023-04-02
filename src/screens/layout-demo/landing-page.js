@@ -235,9 +235,8 @@ export const LandingPage = () => {
                                         page.current.index > 1 ? "-translate-y-1/2 opacity-0" :
                                             "translate-y-1/2 opacity-0"
                                 )}
-
                             >
-                                <p className='text-4xl mb-3'>Lorem ipsum dolor sit amet</p>
+                                <p className='text-4xl mb-3  text-purple-500 font-semibold'>Lorem ipsum dolor sit amet</p>
                                 <KeyTyping className='text-lg' delay={200 * (i + 1)} started={page.current.index == 1}
                                     data="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius interdum lectus, vel molestie velit bibendum quis."
                                 />
