@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Demo3D from 'screens/demo-3d';
 import HomeScreen from 'screens/home';
 import { LandingPage } from 'screens/layout-demo/landing-page';
 import Minigame from 'screens/minigame';
@@ -18,6 +19,9 @@ function App() {
         <Route path="/" element={<HomeScreen />} />
         <Route path="/demo-pages" >
           <Route path="" element={<LandingPage />} />
+        </Route>
+        <Route path="/demo-3d" >
+          <Route path="" element={<Demo3D />} />
         </Route>
         <Route path="/minigame" >
           <Route path="" element={<Minigame />} />
