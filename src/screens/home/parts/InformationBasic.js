@@ -43,7 +43,7 @@ export const InformationBasic = ({ profile, isChangeAvatar, onScrollBottom }) =>
                         </p>
                     </div>
                     {profile.description &&
-                        <p className="mt-2 font-sans font-light text-lg">{profile.description}</p>
+                        <p className="mt-2 font-sans font-light text-lg whitespace-pre-wrap">{profile.description}</p>
                     }
                 </div>
             </div>

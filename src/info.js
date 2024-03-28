@@ -2,7 +2,7 @@ import avatar from './images/selected.png';
 import moment from 'moment/moment';
 
 const START_EXPERIENCE_YEAR = "2019-09-01";
-const updated = "18/03/2023";
+const updated = "28/03/2023";
 
 const contacts = [
     {
@@ -12,26 +12,27 @@ const contacts = [
     },
     {
         name: "envelope",
-        link: "mailto:yeumotnguoi789@gmail.com",
+        link: "mailto:ng.trunghieu9849@gmail.com",
         newPage: false,
-    },
-    {
-        name: "facebook-square",
-        link: "https://www.facebook.com/style.in.my.eyes",
-        newPage: true,
     },
 ];
 const profile = {
     name: "Nguyễn Trung Hiếu",
     avatar: avatar,
-    job: "Web/Mobile Deverloper",
+    job: "Web/Mobile/AI Deverloper",
     experience: Math.round(moment().diff(moment(START_EXPERIENCE_YEAR), "months") * 10 / 12) / 10 + " Years Experience",
     region: "Vietnam",
     gender: "Male",
     otherLanguages: [
         "English",
     ],
-    description: `I have experience in developing web and mobile applications, especially Reactjs and React-Native. Orient my knowledge horizontally. So it is an advantage when deciding how to solve many problems and work with many programming languages`,
+    description: `
+    I have experience in developing web and mobile applications, especially Reactjs and React-Native. 
+    I have experience in developing mini games, logic game-play and proficient in using a number of graphic tools.
+    I have experience in the Embeded System and had some personal products. 
+    I have experience about AI Rediction, Neural Network, use AI services of Amazon Rekonition and Azure Vision AI Services. Other, I have knowledge in "YOLO ultralytics algorithm" and "MMSegmentation".
+    Orient my knowledge horizontally. So it is an advantage when deciding how to solve many problems and work with many programming languages
+    `,
 };
 
 const education = [{
@@ -57,6 +58,7 @@ const education = [{
 
 const experience = [
     {
+        id: 1,
         companyName: "FPT Software",
         companyType: "C",// F or C or G
         location: "Ho Chi Minh city",
@@ -89,6 +91,7 @@ const experience = [
         ]
     },
     {
+        id: 2,
         companyName: "Freelance job",
         companyType: "F",// F or C or G
         from: "12/2020",
@@ -119,6 +122,7 @@ const experience = [
         ]
     },
     {
+        id: 3,
         companyName: "Capstone Project - FPT University",
         companyType: "G",// F or C or G
         from: "01/2020",
@@ -208,6 +212,7 @@ const experience = [
         ]
     },
     {
+        id: 4,
         companyName: "Freelance job",
         companyType: "F",// F or C or G
         from: "06/2021",
@@ -235,6 +240,7 @@ const experience = [
         ]
     },
     {
+        id: 5,
         companyName: "Freelance job",
         companyType: "F",// F or C or G
         from: "10/2021",
@@ -270,6 +276,7 @@ const experience = [
         ]
     },
     {
+        id: 6,
         companyName: "Freelance job",
         companyType: "F",// F or C or G
         from: "11/2021",
@@ -301,6 +308,7 @@ const experience = [
         ]
     },
     {
+        id: 7,
         companyName: "Freelance job",
         companyType: "F",// F or C or G
         from: "03/2023",
@@ -328,26 +336,53 @@ const experience = [
         ]
     },
     {
+        id: 8,
         companyName: "CREASIA",
         companyType: "C",// F or C or G
         from: "20/06/2022",
-        to: "working",
+        to: "29/03/2022",
         jobs: [
             { name: "Front-End minigame", lang: "Javascript" },
             { name: "Front-End", lang: "ReactJs" },
             { name: "Front-End", lang: "React Native" },
             { name: "Back-End", lang: ".Net Core" },
+            { name: "AI", lang: ".Net Core" },
         ],
-        description: `"CREASIA" is marketing business. My job is to build an new admin website and mobile app to manage company's internal affairs. And, build a mini Web/Mobile application to run with some marketing events include minigames, interactive activities app in the website or tablet.`,
+        description: `"CREASIA" is marketing business. My job is to build an new admin website and mobile app to manage company's internal affairs. And, build a mini Web/Mobile application to run with some marketing events include minigames, interactive activities app in the website or tablet. And apply AI into the business of the company`,
         details: [
             {
-                title: "Describe the job",
+                title: "Describe the job with web development",
                 lines: [
                     "Create a game to serve the event: Bubble Shotter, Sliding Puzzle, Lucky Dropdown, Picture Matching,...",
-                    "Create the structure for admin website in ReactJs and React Native",
+                    "Create a website about a event of Big brands",
+                    "Create the core structure for admin website in ReactJs",
                     "Code the flow of processing, send OTP, send email, encrypt and decrypt data,...",
                     "Work with chartsjs",
-                    "Design the UX/UI responsive"
+                    "Design the UX/UI responsive",
+                    "Reference: https://minigame.creasia.vn/, https://creasia.vn/, and an Administration website "
+                ]
+            },
+            {
+                title: "Describe the job with mobile development",
+                lines: [
+                    "Create new aplications and deployment to Apple Store and CH Play",
+                    "Build the core structure for app",
+                    "Use the digital mapping to research outlets",
+                    "Use specialized permissions in apps",
+                    "Create dynamic setup-flow in-app to the administrator change anytime through web",
+                    "Apply communication between Mobile App and a Website minigame of the company",
+                    "Design the UX/UI app suitable for user sets",
+                    "Reference: \"Advance System\" and \"PSA Sale\" "
+                ]
+            },
+            {
+                title: "Describe the job with AI",
+                lines: [
+                    "Proficient in using Amazon Rekognition and Azure Vision AI to redict that user is a real face, compare the face-registion with the current face",
+                    "Know to how to create the datasets by a video or only a procduct image in a feel day for training",
+                    "Have knowledges about different services between Amazon Rekognition and Azure Vision AI",
+                    "Apply that services to the flow of registration for employees and employee attendent",
+                    "Detect CV of candidates for the recruitment"
                 ]
             },
         ]
@@ -360,14 +395,16 @@ const skill = {
         "Project Management",
         "Software Development",
         "Process improvement",
-        "Teamwork"
+        "Teamwork",
+        "Determine deadline",
+        "Control schedule"
     ],
     software: [
         "Visual Studio",
         "Visual Studio Code",
         "Android Studio",
         "IntelliJ IDEA",
-        "Git base/UI",
+        "Git base/UI - Github",
     ],
     other: [
         "Photoshop",
@@ -383,7 +420,11 @@ const references = [
         description: "(It's my games that I do it myseft)",
     },
     {
-        name: " Demo Content Page", url: "/demo-pages",
+        name: "Demo Content Page", url: "/demo-pages",
+        description: "(It's my screen + animation that I do it myseft)",
+    },
+    {
+        name: "Demo Page 3D", url: "/demo-3d",
         description: "(It's my screen + animation that I do it myseft)",
     },
 ]

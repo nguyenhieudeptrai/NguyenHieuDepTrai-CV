@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Contact } from './parts/Contact';
 import { Education } from './parts/Education';
 import { InformationBasic } from './parts/InformationBasic';
@@ -9,35 +9,42 @@ import { TimeUpdated } from './components/TimeUpdated';
 import { contacts, education, experience, profile, skill, updated, references } from 'info';
 import { Reference } from './parts/Reference';
 
-const scrollRef = React.createRef();
 let timeTmp = 0;
+
+const parts = [
+    {
+        name: "Experiences",
+        icon: "fa-exclamation-circle ",
+        component: <Experience experience={experience.sort((a, b) => b.id - a.id)} />
+    },
+    {
+        name: "Educations",
+        icon: "fa-graduation-cap",
+        component: <Education schools={education} />
+    },
+    {
+        name: "Skills",
+        icon: "fa-thumbs-up",
+        component: <Skill myself={skill.myself} softwares={skill.software} others={skill.other} />
+    },
+    {
+        name: "References",
+        icon: "fa-bookmark",
+        component: <Reference referenceSources={references} />
+    },
+];
+
 function HomeScreen() {
 
-    const parts = [
-        {
-            name: "Experiences",
-            icon: "fa-exclamation-circle ",
-            component: <Experience experience={experience} />
-        },
-        {
-            name: "Educations",
-            icon: "fa-graduation-cap",
-            component: <Education schools={education} />
-        },
-        {
-            name: "Skills",
-            icon: "fa-thumbs-up",
-            component: <Skill myself={skill.myself} softwares={skill.software} others={skill.other} />
-        },
-        {
-            name: "References",
-            icon: "fa-bookmark",
-            component: <Reference referenceSources={references} />
-        },
-    ];
 
     const [isChangeAvatar, setChangeAvatar] = useState(false);
     const [time, setTime] = useState(0);
+    const scrollRef = useRef();
+    const scrollStatus = useRef({
+        timeOutId: 0,
+        prevScrollY: 0,
+        isAutoScroll: false,
+    });
 
     useEffect(() => {
         document.title = "Nguyễn Hiếu - Profile";
@@ -47,9 +54,34 @@ function HomeScreen() {
         }
     }, []);
 
+
+
     const onScroll = () => {
+        if (scrollStatus.current.isAutoScroll) return;
         const scrollTop = scrollRef.current?.scrollTop;
         setChangeAvatar(scrollTop >= 200);
+        let isScrolDown = scrollStatus.current.prevScrollY < scrollTop;
+        scrollStatus.current.prevScrollY = scrollTop;
+        clearTimeout(scrollStatus.current.timeOutId);
+        scrollStatus.current.timeOutId = setTimeout(() => {
+            if (isScrolDown) {
+                scrollRef.current?.scrollTo({
+                    left: 0,
+                    top: window.innerHeight * 2,
+                    behavior: 'smooth'
+                });
+            } else {
+                scrollRef.current?.scrollTo({
+                    left: 0,
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+            scrollStatus.current.isAutoScroll = true;
+            setTimeout(() => {
+                scrollStatus.current.isAutoScroll = false;
+            }, 200);
+        }, 100);
     }
     const onScrollToBottom = () => {
         scrollRef.current?.scrollTo({
@@ -88,6 +120,13 @@ function HomeScreen() {
         <div className="my-cv w-screen h-screen bg-emerald-600 overflow-y-auto"
             ref={scrollRef}
             onScroll={onScroll}
+            onTouchStart={() => {
+                scrollStatus.current.isAutoScroll = true;
+            }}
+            onTouchEnd={() => {
+                scrollStatus.current.isAutoScroll = false;
+                onScroll();
+            }}
         >
             <div className={"fixed w-full z-10 "
                 + (isChangeAvatar ? "bg-emerald-600 md:bg-transparent " : "")}>

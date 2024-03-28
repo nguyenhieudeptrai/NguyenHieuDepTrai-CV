@@ -39,21 +39,24 @@ export const InformationDetail = ({ parts = [] }) => {
     );
 
     const onScroll = (e) => {
-        e.preventDefault();
-        if (currentPartIndex.current.scrolling) return;
         const direction = e.deltaY > 0 ? 1 : -1;
         const prevIndex = currentPartIndex.current.index;
-        if (direction === 1 && currentPartIndex.current.index < parts.length - 1) {
-            currentPartIndex.current.index++;
-            _scrollToPart(prevIndex, currentPartIndex.current.index);
-        } else if (direction === -1 && currentPartIndex.current.index > 0) {
-            currentPartIndex.current.index--;
-            _scrollToPart(prevIndex, currentPartIndex.current.index);
+        if (prevIndex > 0 || (direction > 0 && prevIndex == 0)) {
+            e.preventDefault();
+            if (currentPartIndex.current.scrolling) return;
+            if (direction === 1 && currentPartIndex.current.index < parts.length - 1) {
+                currentPartIndex.current.index++;
+                _scrollToPart(prevIndex, currentPartIndex.current.index);
+            } else if (direction === -1 && currentPartIndex.current.index > 0) {
+                currentPartIndex.current.index--;
+                _scrollToPart(prevIndex, currentPartIndex.current.index);
+            }
         }
     }
 
     const _scrollToPart = (prev, index) => {
         currentPartIndex.current.scrolling = true;
+        currentPartIndex.current.index = index;
         setItemIndex({
             current: index,
             last: prev,
