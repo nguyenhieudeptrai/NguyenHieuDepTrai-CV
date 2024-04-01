@@ -14,9 +14,8 @@ import WaterDropdown from 'screens/minigame/WaterDropdown';
 function App() {
 
   return (
-    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomeScreen />} />
+        <Route path="" element={<HomeScreen />} />
         <Route path="/demo-pages" >
           <Route path="" element={<LandingPage />} />
         </Route>
@@ -33,7 +32,7 @@ function App() {
           <Route path='water-dropdown' element={<WaterDropdown />} />
           <Route path='*' element={<Navigate to="/minigame" replace />} />
         </Route>
-        <Route path='*' element={<Navigate to="/" replace />} />
+        <Route path='*' element={<Navigate to="" replace />} />
       </Routes>
     </BrowserRouter>
   );

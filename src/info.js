@@ -27,11 +27,11 @@ const profile = {
         "English",
     ],
     description: `
-    I have experience in developing web and mobile applications, especially Reactjs and React-Native. 
+    I have experience in developing web and mobile applications, especially ReactJs and React-Native. 
     I have experience in developing mini games, logic game-play and proficient in using a number of graphic tools.
-    I have experience in the Embeded System and had some personal products. 
-    I have experience about AI Rediction, Neural Network, use AI services of Amazon Rekonition and Azure Vision AI Services. Other, I have knowledge in "YOLO ultralytics algorithm" and "MMSegmentation".
-    Orient my knowledge horizontally. So it is an advantage when deciding how to solve many problems and work with many programming languages
+    I have experience in the Embedded System and had some personal products. 
+    I have experience about AI Prediction, Neural Network, use AI services of Amazon Rekonition and Azure Vision AI Services. Other, I have knowledge in "YOLO ultralytics algorithm" and "MMSegmentation".
+    Orient my knowledge horizontally. So, it is an advantage when deciding how to solve many problems and work with many programming languages
     `,
 };
 
@@ -216,7 +216,7 @@ const experience = [
         companyName: "Freelance job",
         companyType: "F",// F or C or G
         from: "06/2021",
-        to: "07/2021",
+        to: "08/2021",
         jobs: [
             { name: "Front-End", lang: "ReactJs" }
         ],
@@ -248,7 +248,7 @@ const experience = [
         jobs: [
             { name: "Front-End", lang: "React Native" }
         ],
-        description: '"Traverlog" mobile aplication - Build a social app to search camping or traveling when you have free time and want to be go out, using Google Maps API.',
+        description: '"QuickGo" mobile aplication - Build a social app to search camping or traveling when you have free time and want to be go out, using Google Maps API.',
         details: [
             {
                 title: "Technical Knowledge",
@@ -311,12 +311,12 @@ const experience = [
         id: 7,
         companyName: "Freelance job",
         companyType: "F",// F or C or G
-        from: "03/2023",
-        to: "02/2023",
+        from: "02/2023",
+        to: "03/2023",
         jobs: [
             { name: "Front-End", lang: "React Native" },
         ],
-        description: `My job is to build an new mobile app for Chinese learning. This mobile app call group for online class or study offline with videos`,
+        description: `My job is to build a new mobile app for Chinese learning. This mobile app call group for online class or study offline with videos`,
         details: [
             {
                 title: "Technical Knowledge",
@@ -329,8 +329,8 @@ const experience = [
             {
                 title: "Describe the job",
                 lines: [
-                    "Design the UX/UI for students screen",
-                    "Enbed the Stringee SDK and customize the screen"
+                    "Design the UX/UI for student's screen",
+                    "Embed the Stringee SDK and customize the screen"
                 ]
             },
         ]
@@ -348,13 +348,13 @@ const experience = [
             { name: "Back-End", lang: ".Net Core" },
             { name: "AI", lang: ".Net Core" },
         ],
-        description: `"CREASIA" is marketing business. My job is to build an new admin website and mobile app to manage company's internal affairs. And, build a mini Web/Mobile application to run with some marketing events include minigames, interactive activities app in the website or tablet. And apply AI into the business of the company`,
+        description: `"CREASIA" is marketing business. My job is to build a new admin website and mobile app to manage company's internal affairs. And, build a mini Web/Mobile application to run with some marketing events include minigames, interactive activities app in the website or tablet. And apply AI into the business of the company`,
         details: [
             {
                 title: "Describe the job with web development",
                 lines: [
                     "Create a game to serve the event: Bubble Shotter, Sliding Puzzle, Lucky Dropdown, Picture Matching,...",
-                    "Create a website about a event of Big brands",
+                    "Create a website about an event of big brands",
                     "Create the core structure for admin website in ReactJs",
                     "Code the flow of processing, send OTP, send email, encrypt and decrypt data,...",
                     "Work with chartsjs",
@@ -365,7 +365,7 @@ const experience = [
             {
                 title: "Describe the job with mobile development",
                 lines: [
-                    "Create new aplications and deployment to Apple Store and CH Play",
+                    "Create new applications and deployment to Apple Store and CH Play",
                     "Build the core structure for app",
                     "Use the digital mapping to research outlets",
                     "Use specialized permissions in apps",
@@ -378,10 +378,10 @@ const experience = [
             {
                 title: "Describe the job with AI",
                 lines: [
-                    "Proficient in using Amazon Rekognition and Azure Vision AI to redict that user is a real face, compare the face-registion with the current face",
-                    "Know to how to create the datasets by a video or only a procduct image in a feel day for training",
+                    "Proficient in using Amazon Rekognition and Azure Vision AI to predict that user is a real face, compare the registered face with the current face",
+                    "Know to how to create the datasets by a video or only a product image in a feel day for training",
                     "Have knowledges about different services between Amazon Rekognition and Azure Vision AI",
-                    "Apply that services to the flow of registration for employees and employee attendent",
+                    "Apply those services to the flow of registration for employees and employee attendant",
                     "Detect CV of candidates for the recruitment"
                 ]
             },
